@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "daily_peace_tips",
+  "info": {
+    "singularName": "daily-peace-tip",
+    "pluralName": "daily-peace-tips",
+    "displayName": "DailyPeaceTips",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "DailyPeaceTipsTitle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "DailyPeaceTipsDescrition": {
+      "type": "text",
+      "unique": true,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "healthtips",
+  "info": {
+    "singularName": "healthtip",
+    "pluralName": "healthtips",
+    "displayName": "HealthTips"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "HealthTipsTitle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "HealthTipsDescription": {
+      "type": "text",
+      "unique": true,
+      "required": true
+    },
+    "HealthTipsWebImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
+    "HealthTipsMobileImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    }
+  }
+}

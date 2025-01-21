@@ -4,7 +4,8 @@
   "info": {
     "singularName": "healthtip",
     "pluralName": "healthtips",
-    "displayName": "HealthTips"
+    "displayName": "HealthTips",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,26 +23,31 @@
       "required": true
     },
     "HealthTipsWebImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": false
+      ]
     },
     "HealthTipsMobileImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": false
+      ]
+    },
+    "tips": {
+      "type": "component",
+      "repeatable": true,
+      "component": "tile-tips.tips"
     }
   }
 }

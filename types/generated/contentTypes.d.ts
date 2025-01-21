@@ -407,6 +407,7 @@ export interface ApiDailyPeaceTipDailyPeaceTip
 export interface ApiHealthtipHealthtip extends Struct.CollectionTypeSchema {
   collectionName: 'healthtips';
   info: {
+    description: '';
     displayName: 'HealthTips';
     pluralName: 'healthtips';
     singularName: 'healthtip';
@@ -437,6 +438,7 @@ export interface ApiHealthtipHealthtip extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    tips: Schema.Attribute.Component<'tile-tips.tips', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

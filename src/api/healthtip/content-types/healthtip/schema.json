@@ -43,11 +43,6 @@
         "videos",
         "audios"
       ]
-    },
-    "tips": {
-      "type": "component",
-      "repeatable": true,
-      "component": "tile-tips.tips"
     }
   }
 }

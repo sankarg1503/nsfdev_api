@@ -438,7 +438,6 @@ export interface ApiHealthtipHealthtip extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    tips: Schema.Attribute.Component<'tile-tips.tips', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -470,6 +469,44 @@ export interface ApiHomeBannerHomeBanner extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMenucontrolMenucontrol extends Struct.CollectionTypeSchema {
+  collectionName: 'menucontrols';
+  info: {
+    description: '';
+    displayName: 'menucontrol';
+    pluralName: 'menucontrols';
+    singularName: 'menucontrol';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::menucontrol.menucontrol'
+    > &
+      Schema.Attribute.Private;
+    Parent: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::menucontrol.menucontrol'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -988,6 +1025,7 @@ declare module '@strapi/strapi' {
       'api::daily-peace-tip.daily-peace-tip': ApiDailyPeaceTipDailyPeaceTip;
       'api::healthtip.healthtip': ApiHealthtipHealthtip;
       'api::home-banner.home-banner': ApiHomeBannerHomeBanner;
+      'api::menucontrol.menucontrol': ApiMenucontrolMenucontrol;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

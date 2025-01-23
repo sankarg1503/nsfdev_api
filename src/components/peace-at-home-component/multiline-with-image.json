@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_peace_at_home_component_multiline_with_images",
+  "info": {
+    "displayName": "MultilineWithImage"
+  },
+  "options": {},
+  "attributes": {
+    "Desctiption": {
+      "type": "blocks"
+    },
+    "DescriptionWebImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "DescriptionMobileImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "DescriptionTitle": {
+      "type": "string"
+    }
+  }
+}

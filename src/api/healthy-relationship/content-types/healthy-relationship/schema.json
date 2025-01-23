@@ -1,10 +1,10 @@
 {
-  "kind": "collectionType",
-  "collectionName": "healthtips",
+  "kind": "singleType",
+  "collectionName": "healthy_relationships",
   "info": {
-    "singularName": "healthtip",
-    "pluralName": "healthtips",
-    "displayName": "HealthTips",
+    "singularName": "healthy-relationship",
+    "pluralName": "healthy-relationships",
+    "displayName": "HealthyRelationship",
     "description": ""
   },
   "options": {
@@ -12,17 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "HealthTipsTitle": {
-      "type": "string",
-      "required": true,
-      "unique": true
+    "Title": {
+      "type": "string"
     },
-    "HealthTipsSubTitle": {
-      "type": "string",
-      "unique": true,
-      "required": true
+    "TitleHighlight": {
+      "type": "string"
     },
-    "HealthTipsWebImage": {
+    "ImageWeb": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -33,7 +29,7 @@
         "audios"
       ]
     },
-    "HealthTipsMobileImage": {
+    "ImageMobile": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -44,7 +40,7 @@
         "audios"
       ]
     },
-    "HealthTipsDescription": {
+    "TextDescription": {
       "type": "component",
       "repeatable": true,
       "component": "peace-at-home-component.multi-line-component"

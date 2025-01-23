@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_peace_at_home_component_multi_line_components",
+  "info": {
+    "displayName": "MultiLineComponent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Description": {
+      "type": "text"
+    }
+  }
+}

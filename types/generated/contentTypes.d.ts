@@ -369,6 +369,37 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiContactContact extends Struct.CollectionTypeSchema {
+  collectionName: 'contacts';
+  info: {
+    description: '';
+    displayName: 'contact';
+    pluralName: 'contacts';
+    singularName: 'contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ContactEmail: Schema.Attribute.Email;
+    ContactFeedback: Schema.Attribute.Text;
+    ContactName: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact.contact'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDailyPeaceTipDailyPeaceTip
   extends Struct.CollectionTypeSchema {
   collectionName: 'daily_peace_tips';
@@ -385,12 +416,13 @@ export interface ApiDailyPeaceTipDailyPeaceTip
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    DailyPeaceTipsDescrition: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
     DailyPeaceTipsTitle: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    HealthTipDescription: Schema.Attribute.Component<
+      'peace-at-home-component.multi-line-component',
+      true
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -419,12 +451,16 @@ export interface ApiHealthtipHealthtip extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    HealthTipsDescription: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    HealthTipsDescription: Schema.Attribute.Component<
+      'peace-at-home-component.multi-line-component',
+      true
+    >;
     HealthTipsMobileImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    HealthTipsSubTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     HealthTipsTitle: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -438,6 +474,45 @@ export interface ApiHealthtipHealthtip extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHealthyRelationshipHealthyRelationship
+  extends Struct.SingleTypeSchema {
+  collectionName: 'healthy_relationships';
+  info: {
+    description: '';
+    displayName: 'HealthyRelationship';
+    pluralName: 'healthy-relationships';
+    singularName: 'healthy-relationship';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ImageMobile: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    ImageWeb: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::healthy-relationship.healthy-relationship'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    TextDescription: Schema.Attribute.Component<
+      'peace-at-home-component.multi-line-component',
+      true
+    >;
+    Title: Schema.Attribute.String;
+    TitleHighlight: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1022,8 +1097,10 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::contact.contact': ApiContactContact;
       'api::daily-peace-tip.daily-peace-tip': ApiDailyPeaceTipDailyPeaceTip;
       'api::healthtip.healthtip': ApiHealthtipHealthtip;
+      'api::healthy-relationship.healthy-relationship': ApiHealthyRelationshipHealthyRelationship;
       'api::home-banner.home-banner': ApiHomeBannerHomeBanner;
       'api::menucontrol.menucontrol': ApiMenucontrolMenucontrol;
       'plugin::content-releases.release': PluginContentReleasesRelease;

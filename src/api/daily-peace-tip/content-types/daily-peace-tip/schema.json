@@ -17,10 +17,10 @@
       "required": true,
       "unique": true
     },
-    "DailyPeaceTipsDescrition": {
-      "type": "text",
-      "unique": true,
-      "required": true
+    "HealthTipDescription": {
+      "type": "component",
+      "repeatable": true,
+      "component": "peace-at-home-component.multi-line-component"
     }
   }
 }

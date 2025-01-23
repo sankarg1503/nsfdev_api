@@ -1,3 +1,40 @@
-/*
- * The app doesn't have any components yet.
- */
+import type { Schema, Struct } from '@strapi/strapi';
+
+export interface PeaceAtHomeComponentMultiLineComponent
+  extends Struct.ComponentSchema {
+  collectionName: 'components_peace_at_home_component_multi_line_components';
+  info: {
+    description: '';
+    displayName: 'MultiLineComponent';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text;
+  };
+}
+
+export interface PeaceAtHomeComponentMultilineWithImage
+  extends Struct.ComponentSchema {
+  collectionName: 'components_peace_at_home_component_multiline_with_images';
+  info: {
+    displayName: 'MultilineWithImage';
+  };
+  attributes: {
+    DescriptionMobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    DescriptionTitle: Schema.Attribute.String;
+    DescriptionWebImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    Desctiption: Schema.Attribute.Blocks;
+  };
+}
+
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
+      'peace-at-home-component.multi-line-component': PeaceAtHomeComponentMultiLineComponent;
+      'peace-at-home-component.multiline-with-image': PeaceAtHomeComponentMultilineWithImage;
+    }
+  }
+}

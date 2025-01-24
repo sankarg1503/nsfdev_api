@@ -5,10 +5,21 @@ export interface PeaceAtHomeComponentMultiLineComponent
   collectionName: 'components_peace_at_home_component_multi_line_components';
   info: {
     description: '';
-    displayName: 'MultiLineComponent';
+    displayName: 'MultilineComponent';
   };
   attributes: {
     Description: Schema.Attribute.Text;
+  };
+}
+
+export interface PeaceAtHomeComponentMultilineRichTextBox
+  extends Struct.ComponentSchema {
+  collectionName: 'components_peace_at_home_component_multiline_rich_text_boxes';
+  info: {
+    displayName: 'MultilineRichTextBox';
+  };
+  attributes: {
+    multilinerichtextbox: Schema.Attribute.Blocks;
   };
 }
 
@@ -34,6 +45,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'peace-at-home-component.multi-line-component': PeaceAtHomeComponentMultiLineComponent;
+      'peace-at-home-component.multiline-rich-text-box': PeaceAtHomeComponentMultilineRichTextBox;
       'peace-at-home-component.multiline-with-image': PeaceAtHomeComponentMultilineWithImage;
     }
   }

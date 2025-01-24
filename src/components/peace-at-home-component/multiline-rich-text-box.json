@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_peace_at_home_component_multiline_rich_text_boxes",
+  "info": {
+    "displayName": "MultilineRichTextBox"
+  },
+  "options": {},
+  "attributes": {
+    "multilinerichtextbox": {
+      "type": "blocks"
+    }
+  }
+}

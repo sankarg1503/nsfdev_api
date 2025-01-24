@@ -600,8 +600,8 @@ export interface ApiPeaceathomePeaceathome extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    ContentBlocks: Schema.Attribute.Component<
-      'peace-at-home-component.multi-line-component',
+    ContentBlock: Schema.Attribute.Component<
+      'peace-at-home-component.multiline-rich-text-box',
       true
     >;
     createdAt: Schema.Attribute.DateTime;

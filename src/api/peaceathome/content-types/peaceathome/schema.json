@@ -37,10 +37,10 @@
         "audios"
       ]
     },
-    "ContentBlocks": {
+    "ContentBlock": {
       "type": "component",
       "repeatable": true,
-      "component": "peace-at-home-component.multi-line-component"
+      "component": "peace-at-home-component.multiline-rich-text-box"
     }
   }
 }

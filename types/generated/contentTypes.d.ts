@@ -588,6 +588,45 @@ export interface ApiMenucontrolMenucontrol extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPeaceathomePeaceathome extends Struct.SingleTypeSchema {
+  collectionName: 'peaceathomes';
+  info: {
+    description: '';
+    displayName: 'Peaceathome';
+    pluralName: 'peaceathomes';
+    singularName: 'peaceathome';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ContentBlocks: Schema.Attribute.Component<
+      'peace-at-home-component.multi-line-component',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::peaceathome.peaceathome'
+    > &
+      Schema.Attribute.Private;
+    PeaceathomeMobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    PeaceathomeWebImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1103,6 +1142,7 @@ declare module '@strapi/strapi' {
       'api::healthy-relationship.healthy-relationship': ApiHealthyRelationshipHealthyRelationship;
       'api::home-banner.home-banner': ApiHomeBannerHomeBanner;
       'api::menucontrol.menucontrol': ApiMenucontrolMenucontrol;
+      'api::peaceathome.peaceathome': ApiPeaceathomePeaceathome;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -1,0 +1,46 @@
+{
+  "kind": "singleType",
+  "collectionName": "peaceathomes",
+  "info": {
+    "singularName": "peaceathome",
+    "pluralName": "peaceathomes",
+    "displayName": "Peaceathome",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "blocks"
+    },
+    "PeaceathomeWebImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "PeaceathomeMobileImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ContentBlocks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "peace-at-home-component.multi-line-component"
+    }
+  }
+}

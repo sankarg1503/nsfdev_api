@@ -4,18 +4,19 @@
   "info": {
     "singularName": "peaceathome",
     "pluralName": "peaceathomes",
-    "displayName": "Peaceathome",
-    "description": ""
+    "displayName": "Peace at Home",
+    "description": "Main content for peace at home section"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
-      "type": "blocks"
+    "title": {
+      "type": "blocks",
+      "required": true
     },
-    "PeaceathomeWebImage": {
+    "webImage": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -26,7 +27,7 @@
         "audios"
       ]
     },
-    "PeaceathomeMobileImage": {
+    "mobileImage": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -36,11 +37,6 @@
         "videos",
         "audios"
       ]
-    },
-    "ContentBlock": {
-      "type": "component",
-      "repeatable": true,
-      "component": "peace-at-home-component.multiline-rich-text-box"
     }
   }
 }

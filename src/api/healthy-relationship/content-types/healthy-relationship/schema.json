@@ -4,21 +4,23 @@
   "info": {
     "singularName": "healthy-relationship",
     "pluralName": "healthy-relationships",
-    "displayName": "HealthyRelationship",
-    "description": ""
+    "displayName": "Healthy Relationship",
+    "description": "Information about maintaining healthy relationships"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
-      "type": "string"
+    "title": {
+      "type": "string",
+      "required": true
     },
-    "TitleHighlight": {
-      "type": "string"
+    "highlightedTitle": {
+      "type": "string",
+      "required": true
     },
-    "ImageWeb": {
+    "webImage": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -29,7 +31,7 @@
         "audios"
       ]
     },
-    "ImageMobile": {
+    "mobileImage": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -40,7 +42,7 @@
         "audios"
       ]
     },
-    "TextDescription": {
+    "textDescription": {
       "type": "component",
       "repeatable": true,
       "component": "peace-at-home-component.multi-line-component"

@@ -4,25 +4,25 @@
   "info": {
     "singularName": "healthtip",
     "pluralName": "healthtips",
-    "displayName": "HealthTips",
-    "description": ""
+    "displayName": "Health Tips",
+    "description": "Health and wellness tips for maintaining peace at home"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "HealthTipsTitle": {
+    "title": {
       "type": "string",
       "required": true,
       "unique": true
     },
-    "HealthTipsSubTitle": {
+    "subtitle": {
       "type": "string",
       "unique": true,
       "required": true
     },
-    "HealthTipsWebImage": {
+    "webImage": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -33,7 +33,7 @@
         "audios"
       ]
     },
-    "HealthTipsMobileImage": {
+    "mobileImage": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -44,7 +44,7 @@
         "audios"
       ]
     },
-    "HealthTipsDescription": {
+    "description": {
       "type": "component",
       "repeatable": true,
       "component": "peace-at-home-component.multi-line-component"

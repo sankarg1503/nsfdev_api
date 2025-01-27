@@ -4,22 +4,25 @@
   "info": {
     "singularName": "contact",
     "pluralName": "contacts",
-    "displayName": "contact",
-    "description": ""
+    "displayName": "Contact",
+    "description": "User contact and feedback information"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "ContactName": {
-      "type": "string"
+    "name": {
+      "type": "string",
+      "required": true
     },
-    "ContactEmail": {
-      "type": "email"
+    "email": {
+      "type": "email",
+      "required": true
     },
-    "ContactFeedback": {
-      "type": "text"
+    "feedback": {
+      "type": "text",
+      "required": true
     }
   }
 }

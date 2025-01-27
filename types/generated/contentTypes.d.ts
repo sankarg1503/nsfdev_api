@@ -372,8 +372,8 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiContactContact extends Struct.CollectionTypeSchema {
   collectionName: 'contacts';
   info: {
-    description: '';
-    displayName: 'contact';
+    description: 'User contact and feedback information';
+    displayName: 'Contact';
     pluralName: 'contacts';
     singularName: 'contact';
   };
@@ -381,18 +381,18 @@ export interface ApiContactContact extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    ContactEmail: Schema.Attribute.Email;
-    ContactFeedback: Schema.Attribute.Text;
-    ContactName: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    feedback: Schema.Attribute.Text & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::contact.contact'
     > &
       Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -404,8 +404,8 @@ export interface ApiDailyPeaceTipDailyPeaceTip
   extends Struct.CollectionTypeSchema {
   collectionName: 'daily_peace_tips';
   info: {
-    description: '';
-    displayName: 'DailyPeaceTips';
+    description: 'Daily tips for maintaining peace at home';
+    displayName: 'Daily Peace Tips';
     pluralName: 'daily-peace-tips';
     singularName: 'daily-peace-tip';
   };
@@ -416,10 +416,7 @@ export interface ApiDailyPeaceTipDailyPeaceTip
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    DailyPeaceTipsTitle: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    HealthTipDescription: Schema.Attribute.Component<
+    description: Schema.Attribute.Component<
       'peace-at-home-component.multi-line-component',
       true
     >;
@@ -430,6 +427,9 @@ export interface ApiDailyPeaceTipDailyPeaceTip
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -439,8 +439,8 @@ export interface ApiDailyPeaceTipDailyPeaceTip
 export interface ApiHealthtipHealthtip extends Struct.CollectionTypeSchema {
   collectionName: 'healthtips';
   info: {
-    description: '';
-    displayName: 'HealthTips';
+    description: 'Health and wellness tips for maintaining peace at home';
+    displayName: 'Health Tips';
     pluralName: 'healthtips';
     singularName: 'healthtip';
   };
@@ -451,21 +451,9 @@ export interface ApiHealthtipHealthtip extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    HealthTipsDescription: Schema.Attribute.Component<
+    description: Schema.Attribute.Component<
       'peace-at-home-component.multi-line-component',
       true
-    >;
-    HealthTipsMobileImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    HealthTipsSubTitle: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    HealthTipsTitle: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    HealthTipsWebImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -473,10 +461,20 @@ export interface ApiHealthtipHealthtip extends Struct.CollectionTypeSchema {
       'api::healthtip.healthtip'
     > &
       Schema.Attribute.Private;
+    mobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -484,8 +482,8 @@ export interface ApiHealthyRelationshipHealthyRelationship
   extends Struct.SingleTypeSchema {
   collectionName: 'healthy_relationships';
   info: {
-    description: '';
-    displayName: 'HealthyRelationship';
+    description: 'Information about maintaining healthy relationships';
+    displayName: 'Healthy Relationship';
     pluralName: 'healthy-relationships';
     singularName: 'healthy-relationship';
   };
@@ -496,34 +494,34 @@ export interface ApiHealthyRelationshipHealthyRelationship
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    ImageMobile: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    ImageWeb: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    highlightedTitle: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::healthy-relationship.healthy-relationship'
     > &
       Schema.Attribute.Private;
+    mobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    TextDescription: Schema.Attribute.Component<
+    textDescription: Schema.Attribute.Component<
       'peace-at-home-component.multi-line-component',
       true
     >;
-    Title: Schema.Attribute.String;
-    TitleHighlight: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
 export interface ApiHomeBannerHomeBanner extends Struct.CollectionTypeSchema {
   collectionName: 'home_banners';
   info: {
-    description: '';
-    displayName: 'HomeBanner';
+    description: 'Home page banner content';
+    displayName: 'Home Banner';
     pluralName: 'home-banners';
     singularName: 'home-banner';
   };
@@ -531,9 +529,6 @@ export interface ApiHomeBannerHomeBanner extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    BannerTitle: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -544,6 +539,9 @@ export interface ApiHomeBannerHomeBanner extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -553,8 +551,8 @@ export interface ApiHomeBannerHomeBanner extends Struct.CollectionTypeSchema {
 export interface ApiMenucontrolMenucontrol extends Struct.CollectionTypeSchema {
   collectionName: 'menucontrols';
   info: {
-    description: '';
-    displayName: 'menucontrol';
+    description: 'Navigation menu items and their relationships';
+    displayName: 'Menu Control';
     pluralName: 'menucontrols';
     singularName: 'menucontrol';
   };
@@ -565,10 +563,7 @@ export interface ApiMenucontrolMenucontrol extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Icon: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    icon: Schema.Attribute.String;
     link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -576,12 +571,12 @@ export interface ApiMenucontrolMenucontrol extends Struct.CollectionTypeSchema {
       'api::menucontrol.menucontrol'
     > &
       Schema.Attribute.Private;
-    Parent: Schema.Attribute.Relation<
+    parentMenu: Schema.Attribute.Relation<
       'oneToOne',
       'api::menucontrol.menucontrol'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    Title: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -591,8 +586,8 @@ export interface ApiMenucontrolMenucontrol extends Struct.CollectionTypeSchema {
 export interface ApiPeaceathomePeaceathome extends Struct.SingleTypeSchema {
   collectionName: 'peaceathomes';
   info: {
-    description: '';
-    displayName: 'Peaceathome';
+    description: 'Main content for peace at home section';
+    displayName: 'Peace at Home';
     pluralName: 'peaceathomes';
     singularName: 'peaceathome';
   };
@@ -600,10 +595,6 @@ export interface ApiPeaceathomePeaceathome extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    ContentBlock: Schema.Attribute.Component<
-      'peace-at-home-component.multiline-rich-text-box',
-      true
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -613,17 +604,15 @@ export interface ApiPeaceathomePeaceathome extends Struct.SingleTypeSchema {
       'api::peaceathome.peaceathome'
     > &
       Schema.Attribute.Private;
-    PeaceathomeMobileImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    PeaceathomeWebImage: Schema.Attribute.Media<
+    mobileImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    Title: Schema.Attribute.Blocks;
+    title: Schema.Attribute.Blocks & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 

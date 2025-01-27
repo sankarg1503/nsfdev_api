@@ -4,20 +4,20 @@
   "info": {
     "singularName": "daily-peace-tip",
     "pluralName": "daily-peace-tips",
-    "displayName": "DailyPeaceTips",
-    "description": ""
+    "displayName": "Daily Peace Tips",
+    "description": "Daily tips for maintaining peace at home"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "DailyPeaceTipsTitle": {
+    "title": {
       "type": "string",
       "required": true,
       "unique": true
     },
-    "HealthTipDescription": {
+    "description": {
       "type": "component",
       "repeatable": true,
       "component": "peace-at-home-component.multi-line-component"

@@ -16,9 +16,6 @@
       "type": "string",
       "required": true
     },
-    "icon": {
-      "type": "string"
-    },
     "parentMenu": {
       "type": "relation",
       "relation": "oneToOne",
@@ -26,6 +23,16 @@
     },
     "link": {
       "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

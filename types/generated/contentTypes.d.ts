@@ -563,7 +563,7 @@ export interface ApiMenucontrolMenucontrol extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    icon: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -595,6 +595,10 @@ export interface ApiPeaceathomePeaceathome extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    ContentBlocks: Schema.Attribute.Component<
+      'peace-at-home-component.multiline-rich-text-box',
+      true
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

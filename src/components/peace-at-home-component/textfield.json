@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_peace_at_home_component_textfields",
+  "info": {
+    "displayName": "textfield"
+  },
+  "options": {},
+  "attributes": {
+    "textContent": {
+      "type": "string"
+    }
+  }
+}

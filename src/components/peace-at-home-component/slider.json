@@ -1,21 +1,14 @@
 {
-  "kind": "collectionType",
-  "collectionName": "home_banners",
+  "collectionName": "components_peace_at_home_component_sliders",
   "info": {
-    "singularName": "home-banner",
-    "pluralName": "home-banners",
-    "displayName": "Home Banner",
-    "description": "Home page banner content"
+    "displayName": "slider",
+    "description": ""
   },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
+  "options": {},
   "attributes": {
-    "content": {
-      "type": "component",
-      "repeatable": false,
-      "component": "peace-at-home-component.multiline-rich-text-box"
+    "title": {
+      "type": "string",
+      "maxLength": 100
     },
     "webImage": {
       "type": "media",
@@ -38,6 +31,11 @@
         "videos",
         "audios"
       ]
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.multiline-rich-text-box"
     }
   }
 }

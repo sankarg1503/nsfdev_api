@@ -41,12 +41,46 @@ export interface PeaceAtHomeComponentMultilineWithImage
   };
 }
 
+export interface PeaceAtHomeComponentSlider extends Struct.ComponentSchema {
+  collectionName: 'components_peace_at_home_component_sliders';
+  info: {
+    description: '';
+    displayName: 'slider';
+  };
+  attributes: {
+    description: Schema.Attribute.Component<
+      'peace-at-home-component.multiline-rich-text-box',
+      false
+    >;
+    mobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface PeaceAtHomeComponentTextfield extends Struct.ComponentSchema {
+  collectionName: 'components_peace_at_home_component_textfields';
+  info: {
+    displayName: 'textfield';
+  };
+  attributes: {
+    textContent: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'peace-at-home-component.multi-line-component': PeaceAtHomeComponentMultiLineComponent;
       'peace-at-home-component.multiline-rich-text-box': PeaceAtHomeComponentMultilineRichTextBox;
       'peace-at-home-component.multiline-with-image': PeaceAtHomeComponentMultilineWithImage;
+      'peace-at-home-component.slider': PeaceAtHomeComponentSlider;
+      'peace-at-home-component.textfield': PeaceAtHomeComponentTextfield;
     }
   }
 }

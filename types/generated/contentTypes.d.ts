@@ -436,6 +436,41 @@ export interface ApiDailyPeaceTipDailyPeaceTip
   };
 }
 
+export interface ApiExpertAdviceExpertAdvice
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'expert_advices';
+  info: {
+    description: '';
+    displayName: 'Expert Advice';
+    pluralName: 'expert-advices';
+    singularName: 'expert-advice';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::expert-advice.expert-advice'
+    > &
+      Schema.Attribute.Private;
+    mobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface ApiHealthtipHealthtip extends Struct.CollectionTypeSchema {
   collectionName: 'healthtips';
   info: {
@@ -529,6 +564,10 @@ export interface ApiHomeBannerHomeBanner extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    content: Schema.Attribute.Component<
+      'peace-at-home-component.multiline-rich-text-box',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -538,10 +577,43 @@ export interface ApiHomeBannerHomeBanner extends Struct.CollectionTypeSchema {
       'api::home-banner.home-banner'
     > &
       Schema.Attribute.Private;
+    mobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ApiHomeSliderHomeSlider extends Struct.CollectionTypeSchema {
+  collectionName: 'home_sliders';
+  info: {
+    description: '';
+    displayName: 'Home Slider';
+    pluralName: 'home-sliders';
+    singularName: 'home-slider';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    homeslider: Schema.Attribute.Component<
+      'peace-at-home-component.slider',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-slider.home-slider'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -583,6 +655,38 @@ export interface ApiMenucontrolMenucontrol extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPeaceAtHomeSliderPeaceAtHomeSlider
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'peace_at_home_sliders';
+  info: {
+    displayName: 'PeaceAtHome Slider';
+    pluralName: 'peace-at-home-sliders';
+    singularName: 'peace-at-home-slider';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::peace-at-home-slider.peace-at-home-slider'
+    > &
+      Schema.Attribute.Private;
+    peaceathomeslider: Schema.Attribute.Component<
+      'peace-at-home-component.slider',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPeaceathomePeaceathome extends Struct.SingleTypeSchema {
   collectionName: 'peaceathomes';
   info: {
@@ -617,6 +721,42 @@ export interface ApiPeaceathomePeaceathome extends Struct.SingleTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ApiRelationalRelational extends Struct.CollectionTypeSchema {
+  collectionName: 'relationals';
+  info: {
+    description: '';
+    displayName: 'Relational';
+    pluralName: 'relationals';
+    singularName: 'relational';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Interpersonal: Schema.Attribute.Component<
+      'peace-at-home-component.textfield',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::relational.relational'
+    > &
+      Schema.Attribute.Private;
+    Personal: Schema.Attribute.Component<
+      'peace-at-home-component.textfield',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1131,11 +1271,15 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::contact.contact': ApiContactContact;
       'api::daily-peace-tip.daily-peace-tip': ApiDailyPeaceTipDailyPeaceTip;
+      'api::expert-advice.expert-advice': ApiExpertAdviceExpertAdvice;
       'api::healthtip.healthtip': ApiHealthtipHealthtip;
       'api::healthy-relationship.healthy-relationship': ApiHealthyRelationshipHealthyRelationship;
       'api::home-banner.home-banner': ApiHomeBannerHomeBanner;
+      'api::home-slider.home-slider': ApiHomeSliderHomeSlider;
       'api::menucontrol.menucontrol': ApiMenucontrolMenucontrol;
+      'api::peace-at-home-slider.peace-at-home-slider': ApiPeaceAtHomeSliderPeaceAtHomeSlider;
       'api::peaceathome.peaceathome': ApiPeaceathomePeaceathome;
+      'api::relational.relational': ApiRelationalRelational;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

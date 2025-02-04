@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "relationals",
+  "info": {
+    "singularName": "relational",
+    "pluralName": "relationals",
+    "displayName": "Relational",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Personal": {
+      "type": "component",
+      "repeatable": true,
+      "component": "peace-at-home-component.textfield"
+    },
+    "Interpersonal": {
+      "type": "component",
+      "repeatable": true,
+      "component": "peace-at-home-component.textfield"
+    }
+  }
+}

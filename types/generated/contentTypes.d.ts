@@ -526,10 +526,13 @@ export interface ApiHealthyRelationshipHealthyRelationship
     draftAndPublish: true;
   };
   attributes: {
+    contentBlocks: Schema.Attribute.Component<
+      'peace-at-home-component.multiline-rich-text-box',
+      true
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    highlightedTitle: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -540,11 +543,7 @@ export interface ApiHealthyRelationshipHealthyRelationship
       'images' | 'files' | 'videos' | 'audios'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    textDescription: Schema.Attribute.Component<
-      'peace-at-home-component.multi-line-component',
-      true
-    >;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.Blocks;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

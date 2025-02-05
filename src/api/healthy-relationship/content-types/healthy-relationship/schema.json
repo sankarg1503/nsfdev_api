@@ -13,39 +13,32 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string",
-      "required": true
-    },
-    "highlightedTitle": {
-      "type": "string",
-      "required": true
+      "type": "blocks"
     },
     "webImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     },
     "mobileImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     },
-    "textDescription": {
+    "contentBlocks": {
       "type": "component",
       "repeatable": true,
-      "component": "peace-at-home-component.multi-line-component"
+      "component": "peace-at-home-component.multiline-rich-text-box"
     }
   }
 }

@@ -34,7 +34,7 @@
     },
     "description": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "peace-at-home-component.multiline-rich-text-box"
     }
   }

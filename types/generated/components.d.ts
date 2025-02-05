@@ -50,7 +50,7 @@ export interface PeaceAtHomeComponentSlider extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Component<
       'peace-at-home-component.multiline-rich-text-box',
-      false
+      true
     >;
     mobileImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'

@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "healthyrelationshipcontents",
+  "info": {
+    "singularName": "healthyrelationshipcontent",
+    "pluralName": "healthyrelationshipcontents",
+    "displayName": "healthyrelationshipcontent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "blocks"
+    }
+  }
+}

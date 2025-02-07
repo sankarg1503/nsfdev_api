@@ -551,6 +551,36 @@ export interface ApiHealthyRelationshipHealthyRelationship
   };
 }
 
+export interface ApiHealthyrelationshipcontentHealthyrelationshipcontent
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'healthyrelationshipcontents';
+  info: {
+    description: '';
+    displayName: 'healthyrelationshipcontent';
+    pluralName: 'healthyrelationshipcontents';
+    singularName: 'healthyrelationshipcontent';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::healthyrelationshipcontent.healthyrelationshipcontent'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomeBannerHomeBanner extends Struct.CollectionTypeSchema {
   collectionName: 'home_banners';
   info: {
@@ -752,6 +782,36 @@ export interface ApiRelationalRelational extends Struct.CollectionTypeSchema {
       'peace-at-home-component.textfield',
       true
     >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiUnhealthurelationshipcontentUnhealthurelationshipcontent
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'unhealthurelationshipcontents';
+  info: {
+    description: '';
+    displayName: 'Unhealthurelationshipcontent';
+    pluralName: 'unhealthurelationshipcontents';
+    singularName: 'unhealthurelationshipcontent';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::unhealthurelationshipcontent.unhealthurelationshipcontent'
+    > &
+      Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1273,12 +1333,14 @@ declare module '@strapi/strapi' {
       'api::expert-advice.expert-advice': ApiExpertAdviceExpertAdvice;
       'api::healthtip.healthtip': ApiHealthtipHealthtip;
       'api::healthy-relationship.healthy-relationship': ApiHealthyRelationshipHealthyRelationship;
+      'api::healthyrelationshipcontent.healthyrelationshipcontent': ApiHealthyrelationshipcontentHealthyrelationshipcontent;
       'api::home-banner.home-banner': ApiHomeBannerHomeBanner;
       'api::home-slider.home-slider': ApiHomeSliderHomeSlider;
       'api::menucontrol.menucontrol': ApiMenucontrolMenucontrol;
       'api::peace-at-home-slider.peace-at-home-slider': ApiPeaceAtHomeSliderPeaceAtHomeSlider;
       'api::peaceathome.peaceathome': ApiPeaceathomePeaceathome;
       'api::relational.relational': ApiRelationalRelational;
+      'api::unhealthurelationshipcontent.unhealthurelationshipcontent': ApiUnhealthurelationshipcontentUnhealthurelationshipcontent;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

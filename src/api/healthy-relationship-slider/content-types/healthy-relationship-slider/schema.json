@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "healthy_relationship_sliders",
+  "info": {
+    "singularName": "healthy-relationship-slider",
+    "pluralName": "healthy-relationship-sliders",
+    "displayName": "HealthyRelationship Slider"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "HealthyRelationshipSlider": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.slider"
+    }
+  }
+}

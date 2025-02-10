@@ -513,6 +513,38 @@ export interface ApiHealthtipHealthtip extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHealthyRelationshipSliderHealthyRelationshipSlider
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'healthy_relationship_sliders';
+  info: {
+    displayName: 'HealthyRelationship Slider';
+    pluralName: 'healthy-relationship-sliders';
+    singularName: 'healthy-relationship-slider';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    HealthyRelationshipSlider: Schema.Attribute.Component<
+      'peace-at-home-component.slider',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::healthy-relationship-slider.healthy-relationship-slider'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHealthyRelationshipHealthyRelationship
   extends Struct.SingleTypeSchema {
   collectionName: 'healthy_relationships';
@@ -1332,6 +1364,7 @@ declare module '@strapi/strapi' {
       'api::daily-peace-tip.daily-peace-tip': ApiDailyPeaceTipDailyPeaceTip;
       'api::expert-advice.expert-advice': ApiExpertAdviceExpertAdvice;
       'api::healthtip.healthtip': ApiHealthtipHealthtip;
+      'api::healthy-relationship-slider.healthy-relationship-slider': ApiHealthyRelationshipSliderHealthyRelationshipSlider;
       'api::healthy-relationship.healthy-relationship': ApiHealthyRelationshipHealthyRelationship;
       'api::healthyrelationshipcontent.healthyrelationshipcontent': ApiHealthyrelationshipcontentHealthyrelationshipcontent;
       'api::home-banner.home-banner': ApiHomeBannerHomeBanner;

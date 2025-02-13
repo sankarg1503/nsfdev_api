@@ -59,7 +59,10 @@ export interface PeaceAtHomeComponentSlider extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 100;
       }>;
-    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    webImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
   };
 }
 

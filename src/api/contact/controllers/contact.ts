@@ -1,7 +1,3 @@
-/**
- * contact controller
- */
-
 import { factories } from '@strapi/strapi'
 import CryptoJS from 'crypto-js';
 
@@ -19,10 +15,18 @@ export default factories.createCoreController('api::contact.contact', ({ strapi 
         ctx.request.body.data = decryptedData;
         const response = await super.create(ctx);
         
-        return response;
+        // Sanitize the response to include only the ID
+        const sanitizedResponse = {
+            data: {
+              id: response.data.id
+            }
+          };
+          
+          return sanitizedResponse;
+          
       } catch (error) {
         console.error('Decryption error:', error);
         return ctx.badRequest('Invalid encrypted data');
       }
     }
-  }));
+}));

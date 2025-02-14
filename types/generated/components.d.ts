@@ -48,21 +48,29 @@ export interface PeaceAtHomeComponentSlider extends Struct.ComponentSchema {
     displayName: 'slider';
   };
   attributes: {
-    description: Schema.Attribute.Component<
-      'peace-at-home-component.multiline-rich-text-box',
+    sliderContent: Schema.Attribute.Component<
+      'peace-at-home-component.slider-component',
       true
-    >;
-    mobileImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
     >;
     title: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 100;
       }>;
-    webImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
+  };
+}
+
+export interface PeaceAtHomeComponentSliderComponent
+  extends Struct.ComponentSchema {
+  collectionName: 'components_peace_at_home_component_slider_components';
+  info: {
+    displayName: 'SliderComponent';
+  };
+  attributes: {
+    mobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
     >;
+    slidercontent: Schema.Attribute.Blocks;
+    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -83,6 +91,7 @@ declare module '@strapi/strapi' {
       'peace-at-home-component.multiline-rich-text-box': PeaceAtHomeComponentMultilineRichTextBox;
       'peace-at-home-component.multiline-with-image': PeaceAtHomeComponentMultilineWithImage;
       'peace-at-home-component.slider': PeaceAtHomeComponentSlider;
+      'peace-at-home-component.slider-component': PeaceAtHomeComponentSliderComponent;
       'peace-at-home-component.textfield': PeaceAtHomeComponentTextfield;
     }
   }

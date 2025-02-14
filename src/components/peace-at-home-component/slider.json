@@ -10,32 +10,10 @@
       "type": "string",
       "maxLength": 100
     },
-    "webImage": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "mobileImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "description": {
+    "sliderContent": {
       "type": "component",
       "repeatable": true,
-      "component": "peace-at-home-component.multiline-rich-text-box"
+      "component": "peace-at-home-component.slider-component"
     }
   }
 }

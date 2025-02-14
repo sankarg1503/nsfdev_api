@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_peace_at_home_component_slider_components",
+  "info": {
+    "displayName": "SliderComponent"
+  },
+  "options": {},
+  "attributes": {
+    "slidercontent": {
+      "type": "blocks"
+    },
+    "webImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "mobileImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

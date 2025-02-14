@@ -4,7 +4,8 @@ import CryptoJS from 'crypto-js';
 export default factories.createCoreController('api::contact.contact', ({ strapi }) => ({
     async create(ctx) {
       try {
-        const secretKey = '0244387ac5f95d2f5ae4b5e560e4c617f4b59857378d6579041229fdbb44dee9';
+        //const secretKey = '0244387ac5f95d2f5ae4b5e560e4c617f4b59857378d6579041229fdbb44dee9';
+        const secretKey = process.env.ENCRYPTION_KEY;
         const encryptedData = ctx.request.body.data;
       
         // Decrypt the data
@@ -23,7 +24,7 @@ export default factories.createCoreController('api::contact.contact', ({ strapi 
           };
           
           return sanitizedResponse;
-          
+
       } catch (error) {
         console.error('Decryption error:', error);
         return ctx.badRequest('Invalid encrypted data');

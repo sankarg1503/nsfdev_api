@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "no_peaceat_home_sliders",
+  "info": {
+    "singularName": "no-peaceat-home-slider",
+    "pluralName": "no-peaceat-home-sliders",
+    "displayName": "NoPeaceatHomeSlider"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nopeaceathome": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.slider"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "no_peace_home_contents",
+  "info": {
+    "singularName": "no-peace-home-content",
+    "pluralName": "no-peace-home-contents",
+    "displayName": "NoPeaceHomePartnerviolence"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "blocks"
+    }
+  }
+}

@@ -716,6 +716,199 @@ export interface ApiMenucontrolMenucontrol extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiNoPeaceHomeContentNoPeaceHomeContent
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'no_peace_home_contents';
+  info: {
+    displayName: 'NoPeaceHomePartnerviolence';
+    pluralName: 'no-peace-home-contents';
+    singularName: 'no-peace-home-content';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::no-peace-home-content.no-peace-home-content'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNoPeaceHomeHouseConflictNoPeaceHomeHouseConflict
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'no_peace_home_house_conflicts';
+  info: {
+    displayName: 'NoPeaceHomeHouseConflict';
+    pluralName: 'no-peace-home-house-conflicts';
+    singularName: 'no-peace-home-house-conflict';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Component<
+      'peace-at-home-component.nopeaceat-homemultilineimage',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::no-peace-home-house-conflict.no-peace-home-house-conflict'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNoPeaceHomeScenarioOneNoPeaceHomeScenarioOne
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'no_peace_home_scenario_ones';
+  info: {
+    displayName: 'NoPeaceHomeScenarioOne';
+    pluralName: 'no-peace-home-scenario-ones';
+    singularName: 'no-peace-home-scenario-one';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Component<
+      'peace-at-home-component.nopeaceat-homemultilineimage',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::no-peace-home-scenario-one.no-peace-home-scenario-one'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNoPeaceHomeScenariotwoNoPeaceHomeScenariotwo
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'no_peace_home_scenariotwos';
+  info: {
+    displayName: 'NoPeaceHomeScenariotwo';
+    pluralName: 'no-peace-home-scenariotwos';
+    singularName: 'no-peace-home-scenariotwo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Component<
+      'peace-at-home-component.nopeaceat-homemultilineimage',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::no-peace-home-scenariotwo.no-peace-home-scenariotwo'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNoPeaceatHomeSliderNoPeaceatHomeSlider
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'no_peaceat_home_sliders';
+  info: {
+    displayName: 'NoPeaceatHomeSlider';
+    pluralName: 'no-peaceat-home-sliders';
+    singularName: 'no-peaceat-home-slider';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::no-peaceat-home-slider.no-peaceat-home-slider'
+    > &
+      Schema.Attribute.Private;
+    nopeaceathome: Schema.Attribute.Component<
+      'peace-at-home-component.slider',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNoPeaceatHomeNoPeaceatHome extends Struct.SingleTypeSchema {
+  collectionName: 'no_peaceat_homes';
+  info: {
+    displayName: 'NoPeaceatHome';
+    pluralName: 'no-peaceat-homes';
+    singularName: 'no-peaceat-home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contentBlocks: Schema.Attribute.Component<
+      'peace-at-home-component.multiline-rich-text-box',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::no-peaceat-home.no-peaceat-home'
+    > &
+      Schema.Attribute.Private;
+    mobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface ApiPeaceAtHomeSliderPeaceAtHomeSlider
   extends Struct.CollectionTypeSchema {
   collectionName: 'peace_at_home_sliders';
@@ -1370,6 +1563,12 @@ declare module '@strapi/strapi' {
       'api::home-banner.home-banner': ApiHomeBannerHomeBanner;
       'api::home-slider.home-slider': ApiHomeSliderHomeSlider;
       'api::menucontrol.menucontrol': ApiMenucontrolMenucontrol;
+      'api::no-peace-home-content.no-peace-home-content': ApiNoPeaceHomeContentNoPeaceHomeContent;
+      'api::no-peace-home-house-conflict.no-peace-home-house-conflict': ApiNoPeaceHomeHouseConflictNoPeaceHomeHouseConflict;
+      'api::no-peace-home-scenario-one.no-peace-home-scenario-one': ApiNoPeaceHomeScenarioOneNoPeaceHomeScenarioOne;
+      'api::no-peace-home-scenariotwo.no-peace-home-scenariotwo': ApiNoPeaceHomeScenariotwoNoPeaceHomeScenariotwo;
+      'api::no-peaceat-home-slider.no-peaceat-home-slider': ApiNoPeaceatHomeSliderNoPeaceatHomeSlider;
+      'api::no-peaceat-home.no-peaceat-home': ApiNoPeaceatHomeNoPeaceatHome;
       'api::peace-at-home-slider.peace-at-home-slider': ApiPeaceAtHomeSliderPeaceAtHomeSlider;
       'api::peaceathome.peaceathome': ApiPeaceathomePeaceathome;
       'api::relational.relational': ApiRelationalRelational;

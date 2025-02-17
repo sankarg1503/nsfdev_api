@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "no_peace_home_scenariotwos",
+  "info": {
+    "singularName": "no-peace-home-scenariotwo",
+    "pluralName": "no-peace-home-scenariotwos",
+    "displayName": "NoPeaceHomeScenariotwo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.nopeaceat-homemultilineimage"
+    }
+  }
+}

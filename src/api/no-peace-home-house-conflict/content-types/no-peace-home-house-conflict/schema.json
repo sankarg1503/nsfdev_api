@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "no_peace_home_house_conflicts",
+  "info": {
+    "singularName": "no-peace-home-house-conflict",
+    "pluralName": "no-peace-home-house-conflicts",
+    "displayName": "NoPeaceHomeHouseConflict"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.nopeaceat-homemultilineimage"
+    }
+  }
+}

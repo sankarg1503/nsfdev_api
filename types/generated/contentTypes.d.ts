@@ -1027,6 +1027,7 @@ export interface ApiSupportServiceSupportService
     draftAndPublish: true;
   };
   attributes: {
+    AboutOrg: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1097,6 +1098,7 @@ export interface ApiSupportServiceSupportService
         minLength: 8;
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    ServiceHours: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

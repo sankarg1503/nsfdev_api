@@ -105,6 +105,12 @@
       "required": true,
       "max": 180,
       "min": -180
+    },
+    "ServiceHours": {
+      "type": "string"
+    },
+    "AboutOrg": {
+      "type": "blocks"
     }
   }
 }

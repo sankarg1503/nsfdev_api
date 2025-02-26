@@ -1,0 +1,110 @@
+{
+  "kind": "singleType",
+  "collectionName": "support_services",
+  "info": {
+    "singularName": "support-service",
+    "pluralName": "support-services",
+    "displayName": "SupportService",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "OrgName": {
+      "type": "string"
+    },
+    "PhoneNumber": {
+      "type": "string",
+      "required": true,
+      "regex": "^\\+?[1-9]\\d{1,14}$",
+      "minLength": 8,
+      "maxLength": 15
+    },
+    "OrgWebUrl": {
+      "type": "string",
+      "regex": "^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$",
+      "required": true
+    },
+    "OrgAddress": {
+      "type": "string"
+    },
+    "OrgCity": {
+      "type": "string"
+    },
+    "OrgZipCode": {
+      "type": "string",
+      "regex": "^[A-Z0-9][A-Z0-9\\s-]{0,10}[A-Z0-9]$",
+      "minLength": 2,
+      "maxLength": 12
+    },
+    "OrgHotline": {
+      "type": "string",
+      "required": true,
+      "regex": "^\\+?[1-9]\\d{1,14}$",
+      "minLength": 8,
+      "maxLength": 15
+    },
+    "isCounseling": {
+      "type": "boolean",
+      "default": false
+    },
+    "isCommunityOutreach": {
+      "type": "boolean",
+      "default": false
+    },
+    "isReferralServices": {
+      "type": "boolean",
+      "default": false
+    },
+    "isShelter": {
+      "type": "boolean",
+      "default": false
+    },
+    "isCourtServices": {
+      "type": "boolean",
+      "default": false
+    },
+    "isOther": {
+      "type": "boolean",
+      "default": false
+    },
+    "isChildrenServices": {
+      "type": "boolean",
+      "default": false
+    },
+    "isSupportGroups": {
+      "type": "boolean",
+      "default": false
+    },
+    "isMedicalServices": {
+      "type": "boolean",
+      "default": false
+    },
+    "isBasicNeedsAssistance": {
+      "type": "boolean",
+      "default": false
+    },
+    "isSafetyPlanning": {
+      "type": "boolean",
+      "default": false
+    },
+    "isTranslationServices": {
+      "type": "boolean",
+      "default": false
+    },
+    "OrgLatitude": {
+      "type": "decimal",
+      "required": true,
+      "max": 90,
+      "min": -90
+    },
+    "OrgLongitude": {
+      "type": "decimal",
+      "required": true,
+      "max": 180,
+      "min": -180
+    }
+  }
+}

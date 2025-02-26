@@ -1014,6 +1014,95 @@ export interface ApiRelationalRelational extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSupportServiceSupportService
+  extends Struct.SingleTypeSchema {
+  collectionName: 'support_services';
+  info: {
+    description: '';
+    displayName: 'SupportService';
+    pluralName: 'support-services';
+    singularName: 'support-service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    isBasicNeedsAssistance: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    isChildrenServices: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    isCommunityOutreach: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    isCounseling: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    isCourtServices: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    isMedicalServices: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    isOther: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    isReferralServices: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    isSafetyPlanning: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    isShelter: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    isSupportGroups: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    isTranslationServices: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::support-service.support-service'
+    > &
+      Schema.Attribute.Private;
+    OrgAddress: Schema.Attribute.String;
+    OrgCity: Schema.Attribute.String;
+    OrgHotline: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 15;
+        minLength: 8;
+      }>;
+    OrgLatitude: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 90;
+          min: -90;
+        },
+        number
+      >;
+    OrgLongitude: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 180;
+          min: -180;
+        },
+        number
+      >;
+    OrgName: Schema.Attribute.String;
+    OrgWebUrl: Schema.Attribute.String & Schema.Attribute.Required;
+    OrgZipCode: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 12;
+        minLength: 2;
+      }>;
+    PhoneNumber: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 15;
+        minLength: 8;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiUnhealthurelationshipcontentUnhealthurelationshipcontent
   extends Struct.CollectionTypeSchema {
   collectionName: 'unhealthurelationshipcontents';
@@ -1572,6 +1661,7 @@ declare module '@strapi/strapi' {
       'api::peace-at-home-slider.peace-at-home-slider': ApiPeaceAtHomeSliderPeaceAtHomeSlider;
       'api::peaceathome.peaceathome': ApiPeaceathomePeaceathome;
       'api::relational.relational': ApiRelationalRelational;
+      'api::support-service.support-service': ApiSupportServiceSupportService;
       'api::unhealthurelationshipcontent.unhealthurelationshipcontent': ApiUnhealthurelationshipcontentUnhealthurelationshipcontent;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

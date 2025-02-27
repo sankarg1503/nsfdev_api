@@ -1,5 +1,19 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface PeaceAtHomeComponentFilterConstant
+  extends Struct.ComponentSchema {
+  collectionName: 'components_peace_at_home_component_filter_constants';
+  info: {
+    description: '';
+    displayName: 'FilterConstant';
+  };
+  attributes: {
+    key: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    selected: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+  };
+}
+
 export interface PeaceAtHomeComponentMultiLineComponent
   extends Struct.ComponentSchema {
   collectionName: 'components_peace_at_home_component_multi_line_components';
@@ -105,6 +119,7 @@ export interface PeaceAtHomeComponentTextfield extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'peace-at-home-component.filter-constant': PeaceAtHomeComponentFilterConstant;
       'peace-at-home-component.multi-line-component': PeaceAtHomeComponentMultiLineComponent;
       'peace-at-home-component.multiline-rich-text-box': PeaceAtHomeComponentMultilineRichTextBox;
       'peace-at-home-component.multiline-with-image': PeaceAtHomeComponentMultilineWithImage;

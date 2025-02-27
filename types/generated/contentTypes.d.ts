@@ -1014,8 +1014,40 @@ export interface ApiRelationalRelational extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiServiceFilteroptionServiceFilteroption
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'service_filteroptions';
+  info: {
+    displayName: 'ServiceFilteroption';
+    pluralName: 'service-filteroptions';
+    singularName: 'service-filteroption';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    filterOptions: Schema.Attribute.Component<
+      'peace-at-home-component.filter-constant',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-filteroption.service-filteroption'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSupportServiceSupportService
-  extends Struct.SingleTypeSchema {
+  extends Struct.CollectionTypeSchema {
   collectionName: 'support_services';
   info: {
     description: '';
@@ -1040,6 +1072,7 @@ export interface ApiSupportServiceSupportService
     isCounseling: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     isCourtServices: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<false>;
+    IsHotline: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     isMedicalServices: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<false>;
     isOther: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -1061,7 +1094,6 @@ export interface ApiSupportServiceSupportService
     OrgAddress: Schema.Attribute.String;
     OrgCity: Schema.Attribute.String;
     OrgHotline: Schema.Attribute.String &
-      Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 15;
         minLength: 8;
@@ -1663,6 +1695,7 @@ declare module '@strapi/strapi' {
       'api::peace-at-home-slider.peace-at-home-slider': ApiPeaceAtHomeSliderPeaceAtHomeSlider;
       'api::peaceathome.peaceathome': ApiPeaceathomePeaceathome;
       'api::relational.relational': ApiRelationalRelational;
+      'api::service-filteroption.service-filteroption': ApiServiceFilteroptionServiceFilteroption;
       'api::support-service.support-service': ApiSupportServiceSupportService;
       'api::unhealthurelationshipcontent.unhealthurelationshipcontent': ApiUnhealthurelationshipcontentUnhealthurelationshipcontent;
       'plugin::content-releases.release': PluginContentReleasesRelease;

@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "support_services",
   "info": {
     "singularName": "support-service",
@@ -18,7 +18,7 @@
     "PhoneNumber": {
       "type": "string",
       "required": true,
-      "regex": "^\\+?[1-9]\\d{1,14}$",
+      "regex": "^\\+?[1-9]\\d{0,14}(-\\d{1,4}){0,3}$",
       "minLength": 8,
       "maxLength": 15
     },
@@ -41,8 +41,8 @@
     },
     "OrgHotline": {
       "type": "string",
-      "required": true,
-      "regex": "^\\+?[1-9]\\d{1,14}$",
+      "required": false,
+      "regex": "^\\+?[1-9]\\d{0,14}(-\\d{1,4}){0,3}$",
       "minLength": 8,
       "maxLength": 15
     },
@@ -111,6 +111,10 @@
     },
     "AboutOrg": {
       "type": "blocks"
+    },
+    "IsHotline": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

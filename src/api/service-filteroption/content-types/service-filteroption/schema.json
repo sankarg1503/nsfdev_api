@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_filteroptions",
+  "info": {
+    "singularName": "service-filteroption",
+    "pluralName": "service-filteroptions",
+    "displayName": "ServiceFilteroption"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "filterOptions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "peace-at-home-component.filter-constant"
+    }
+  }
+}

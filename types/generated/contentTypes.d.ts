@@ -777,70 +777,6 @@ export interface ApiNoPeaceHomeHouseConflictNoPeaceHomeHouseConflict
   };
 }
 
-export interface ApiNoPeaceHomeScenarioOneNoPeaceHomeScenarioOne
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'no_peace_home_scenario_ones';
-  info: {
-    displayName: 'NoPeaceHomeScenarioOne';
-    pluralName: 'no-peace-home-scenario-ones';
-    singularName: 'no-peace-home-scenario-one';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    content: Schema.Attribute.Component<
-      'peace-at-home-component.nopeaceat-homemultilineimage',
-      false
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::no-peace-home-scenario-one.no-peace-home-scenario-one'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiNoPeaceHomeScenariotwoNoPeaceHomeScenariotwo
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'no_peace_home_scenariotwos';
-  info: {
-    displayName: 'NoPeaceHomeScenariotwo';
-    pluralName: 'no-peace-home-scenariotwos';
-    singularName: 'no-peace-home-scenariotwo';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    content: Schema.Attribute.Component<
-      'peace-at-home-component.nopeaceat-homemultilineimage',
-      false
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::no-peace-home-scenariotwo.no-peace-home-scenariotwo'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiNoPeaceatHomeSliderNoPeaceatHomeSlider
   extends Struct.CollectionTypeSchema {
   collectionName: 'no_peaceat_home_sliders';
@@ -1158,6 +1094,174 @@ export interface ApiUnhealthurelationshipcontentUnhealthurelationshipcontent
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::unhealthurelationshipcontent.unhealthurelationshipcontent'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiUnhealthyRelationshipUnhealthyRelationship
+  extends Struct.SingleTypeSchema {
+  collectionName: 'unhealthy_relationships';
+  info: {
+    displayName: 'Unhealthy Relationship';
+    pluralName: 'unhealthy-relationships';
+    singularName: 'unhealthy-relationship';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contentBlocks: Schema.Attribute.Component<
+      'peace-at-home-component.multiline-rich-text-box',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::unhealthy-relationship.unhealthy-relationship'
+    > &
+      Schema.Attribute.Private;
+    mobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ApiUnhealthyrelationfirstcontentUnhealthyrelationfirstcontent
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'unhealthyrelationfirstcontents';
+  info: {
+    displayName: 'Unhealthyrelationfirstcontent';
+    pluralName: 'unhealthyrelationfirstcontents';
+    singularName: 'unhealthyrelationfirstcontent';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Component<
+      'peace-at-home-component.nopeaceat-homemultilineimage',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::unhealthyrelationfirstcontent.unhealthyrelationfirstcontent'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiUnhealthyrelationsecondcontentUnhealthyrelationsecondcontent
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'unhealthyrelationsecondcontents';
+  info: {
+    description: '';
+    displayName: 'Unhealthyrelationsecondcontent';
+    pluralName: 'unhealthyrelationsecondcontents';
+    singularName: 'unhealthyrelationsecondcontent';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Component<
+      'peace-at-home-component.nopeaceat-homemultilineimage',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::unhealthyrelationsecondcontent.unhealthyrelationsecondcontent'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiUnhealthyrelationsliderUnhealthyrelationslider
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'unhealthyrelationsliders';
+  info: {
+    description: '';
+    displayName: 'Unhealthyrelationslider';
+    pluralName: 'unhealthyrelationsliders';
+    singularName: 'unhealthyrelationslider';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::unhealthyrelationslider.unhealthyrelationslider'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    unhealthyrelationslider: Schema.Attribute.Component<
+      'peace-at-home-component.slider',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiUnhealthyrelationthirdcontentUnhealthyrelationthirdcontent
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'unhealthyrelationthirdcontents';
+  info: {
+    description: '';
+    displayName: 'Unhealthyrelationthirdcontent';
+    pluralName: 'unhealthyrelationthirdcontents';
+    singularName: 'unhealthyrelationthirdcontent';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Component<
+      'peace-at-home-component.nopeaceat-homemultilineimage',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::unhealthyrelationthirdcontent.unhealthyrelationthirdcontent'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -1688,8 +1792,6 @@ declare module '@strapi/strapi' {
       'api::menucontrol.menucontrol': ApiMenucontrolMenucontrol;
       'api::no-peace-home-content.no-peace-home-content': ApiNoPeaceHomeContentNoPeaceHomeContent;
       'api::no-peace-home-house-conflict.no-peace-home-house-conflict': ApiNoPeaceHomeHouseConflictNoPeaceHomeHouseConflict;
-      'api::no-peace-home-scenario-one.no-peace-home-scenario-one': ApiNoPeaceHomeScenarioOneNoPeaceHomeScenarioOne;
-      'api::no-peace-home-scenariotwo.no-peace-home-scenariotwo': ApiNoPeaceHomeScenariotwoNoPeaceHomeScenariotwo;
       'api::no-peaceat-home-slider.no-peaceat-home-slider': ApiNoPeaceatHomeSliderNoPeaceatHomeSlider;
       'api::no-peaceat-home.no-peaceat-home': ApiNoPeaceatHomeNoPeaceatHome;
       'api::peace-at-home-slider.peace-at-home-slider': ApiPeaceAtHomeSliderPeaceAtHomeSlider;
@@ -1698,6 +1800,11 @@ declare module '@strapi/strapi' {
       'api::service-filteroption.service-filteroption': ApiServiceFilteroptionServiceFilteroption;
       'api::support-service.support-service': ApiSupportServiceSupportService;
       'api::unhealthurelationshipcontent.unhealthurelationshipcontent': ApiUnhealthurelationshipcontentUnhealthurelationshipcontent;
+      'api::unhealthy-relationship.unhealthy-relationship': ApiUnhealthyRelationshipUnhealthyRelationship;
+      'api::unhealthyrelationfirstcontent.unhealthyrelationfirstcontent': ApiUnhealthyrelationfirstcontentUnhealthyrelationfirstcontent;
+      'api::unhealthyrelationsecondcontent.unhealthyrelationsecondcontent': ApiUnhealthyrelationsecondcontentUnhealthyrelationsecondcontent;
+      'api::unhealthyrelationslider.unhealthyrelationslider': ApiUnhealthyrelationsliderUnhealthyrelationslider;
+      'api::unhealthyrelationthirdcontent.unhealthyrelationthirdcontent': ApiUnhealthyrelationthirdcontentUnhealthyrelationthirdcontent;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

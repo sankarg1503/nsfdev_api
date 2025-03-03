@@ -1,17 +1,18 @@
 {
   "kind": "collectionType",
-  "collectionName": "no_peace_home_scenariotwos",
+  "collectionName": "unhealthyrelationthirdcontents",
   "info": {
-    "singularName": "no-peace-home-scenariotwo",
-    "pluralName": "no-peace-home-scenariotwos",
-    "displayName": "NoPeaceHomeScenariotwo"
+    "singularName": "unhealthyrelationthirdcontent",
+    "pluralName": "unhealthyrelationthirdcontents",
+    "displayName": "Unhealthyrelationthirdcontent",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "content": {
+    "Content": {
       "type": "component",
       "repeatable": false,
       "component": "peace-at-home-component.nopeaceat-homemultilineimage"

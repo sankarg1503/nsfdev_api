@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "unhealthyrelationsliders",
+  "info": {
+    "singularName": "unhealthyrelationslider",
+    "pluralName": "unhealthyrelationsliders",
+    "displayName": "Unhealthyrelationslider",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "unhealthyrelationslider": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.slider"
+    }
+  }
+}

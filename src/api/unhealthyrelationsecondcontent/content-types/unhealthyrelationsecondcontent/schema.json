@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "unhealthyrelationsecondcontents",
+  "info": {
+    "singularName": "unhealthyrelationsecondcontent",
+    "pluralName": "unhealthyrelationsecondcontents",
+    "displayName": "Unhealthyrelationsecondcontent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.nopeaceat-homemultilineimage"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "unhealthy_relationships",
+  "info": {
+    "singularName": "unhealthy-relationship",
+    "pluralName": "unhealthy-relationships",
+    "displayName": "Unhealthy Relationship"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "blocks"
+    },
+    "webImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "mobileImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "contentBlocks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "peace-at-home-component.multiline-rich-text-box"
+    }
+  }
+}

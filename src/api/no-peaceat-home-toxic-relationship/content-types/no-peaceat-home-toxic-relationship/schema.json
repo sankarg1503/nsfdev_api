@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "no_peace_home_house_conflicts",
+  "collectionName": "no_peaceat_home_toxic_relationships",
   "info": {
-    "singularName": "no-peace-home-house-conflict",
-    "pluralName": "no-peace-home-house-conflicts",
-    "displayName": "NoPeaceHomeHouseConflict",
+    "singularName": "no-peaceat-home-toxic-relationship",
+    "pluralName": "no-peaceat-home-toxic-relationships",
+    "displayName": "NoPeaceatHomeToxicRelationship",
     "description": ""
   },
   "options": {

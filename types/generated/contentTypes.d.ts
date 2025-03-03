@@ -749,6 +749,7 @@ export interface ApiNoPeaceHomeHouseConflictNoPeaceHomeHouseConflict
   extends Struct.CollectionTypeSchema {
   collectionName: 'no_peace_home_house_conflicts';
   info: {
+    description: '';
     displayName: 'NoPeaceHomeHouseConflict';
     pluralName: 'no-peace-home-house-conflicts';
     singularName: 'no-peace-home-house-conflict';
@@ -757,7 +758,7 @@ export interface ApiNoPeaceHomeHouseConflictNoPeaceHomeHouseConflict
     draftAndPublish: true;
   };
   attributes: {
-    content: Schema.Attribute.Component<
+    Content: Schema.Attribute.Component<
       'peace-at-home-component.nopeaceat-homemultilineimage',
       false
     >;
@@ -802,6 +803,39 @@ export interface ApiNoPeaceatHomeSliderNoPeaceatHomeSlider
       'peace-at-home-component.slider',
       false
     >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNoPeaceatHomeToxicRelationshipNoPeaceatHomeToxicRelationship
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'no_peaceat_home_toxic_relationships';
+  info: {
+    description: '';
+    displayName: 'NoPeaceatHomeToxicRelationship';
+    pluralName: 'no-peaceat-home-toxic-relationships';
+    singularName: 'no-peaceat-home-toxic-relationship';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Component<
+      'peace-at-home-component.nopeaceat-homemultilineimage',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::no-peaceat-home-toxic-relationship.no-peaceat-home-toxic-relationship'
+    > &
+      Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1793,6 +1827,7 @@ declare module '@strapi/strapi' {
       'api::no-peace-home-content.no-peace-home-content': ApiNoPeaceHomeContentNoPeaceHomeContent;
       'api::no-peace-home-house-conflict.no-peace-home-house-conflict': ApiNoPeaceHomeHouseConflictNoPeaceHomeHouseConflict;
       'api::no-peaceat-home-slider.no-peaceat-home-slider': ApiNoPeaceatHomeSliderNoPeaceatHomeSlider;
+      'api::no-peaceat-home-toxic-relationship.no-peaceat-home-toxic-relationship': ApiNoPeaceatHomeToxicRelationshipNoPeaceatHomeToxicRelationship;
       'api::no-peaceat-home.no-peaceat-home': ApiNoPeaceatHomeNoPeaceatHome;
       'api::peace-at-home-slider.peace-at-home-slider': ApiPeaceAtHomeSliderPeaceAtHomeSlider;
       'api::peaceathome.peaceathome': ApiPeaceathomePeaceathome;

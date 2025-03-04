@@ -704,6 +704,7 @@ export interface ApiMenucontrolMenucontrol extends Struct.CollectionTypeSchema {
       'api::menucontrol.menucontrol'
     > &
       Schema.Attribute.Private;
+    order: Schema.Attribute.Integer;
     parentMenu: Schema.Attribute.Relation<
       'oneToOne',
       'api::menucontrol.menucontrol'

@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "t_visas",
+  "info": {
+    "singularName": "t-visa",
+    "pluralName": "t-visas",
+    "displayName": "TVisa"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.nopeaceat-homemultilineimage"
+    }
+  }
+}

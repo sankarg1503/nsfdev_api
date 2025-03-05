@@ -369,6 +369,37 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiChildWaiverChildWaiver extends Struct.CollectionTypeSchema {
+  collectionName: 'child_waivers';
+  info: {
+    displayName: 'ChildWaiver';
+    pluralName: 'child-waivers';
+    singularName: 'child-waiver';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Component<
+      'peace-at-home-component.nopeaceat-homemultilineimage',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::child-waiver.child-waiver'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactContact extends Struct.CollectionTypeSchema {
   collectionName: 'contacts';
   info: {
@@ -464,6 +495,44 @@ export interface ApiExpertAdviceExpertAdvice
     >;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ApiFederalLevelLawFederalLevelLaw
+  extends Struct.SingleTypeSchema {
+  collectionName: 'federal_level_laws';
+  info: {
+    description: '';
+    displayName: 'FederalLevelLaw';
+    pluralName: 'federal-level-laws';
+    singularName: 'federal-level-law';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contentBlocks: Schema.Attribute.Component<
+      'peace-at-home-component.multiline-rich-text-box',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::federal-level-law.federal-level-law'
+    > &
+      Schema.Attribute.Private;
+    mobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.Blocks;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -672,6 +741,38 @@ export interface ApiHomeSliderHomeSlider extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::home-slider.home-slider'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiImmigrationBenefitImmigrationBenefit
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'immigration_benefits';
+  info: {
+    displayName: 'ImmigrationBenefit';
+    pluralName: 'immigration-benefits';
+    singularName: 'immigration-benefit';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Component<
+      'peace-at-home-component.nopeaceat-homemultilineimage',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::immigration-benefit.immigration-benefit'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -1102,6 +1203,68 @@ export interface ApiSupportServiceSupportService
       }>;
     publishedAt: Schema.Attribute.DateTime;
     ServiceHours: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTVisaTVisa extends Struct.CollectionTypeSchema {
+  collectionName: 't_visas';
+  info: {
+    displayName: 'TVisa';
+    pluralName: 't-visas';
+    singularName: 't-visa';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Component<
+      'peace-at-home-component.nopeaceat-homemultilineimage',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::t-visa.t-visa'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiUVisaUVisa extends Struct.CollectionTypeSchema {
+  collectionName: 'u_visas';
+  info: {
+    displayName: 'UVisa';
+    pluralName: 'u-visas';
+    singularName: 'u-visa';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Component<
+      'peace-at-home-component.nopeaceat-homemultilineimage',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::u-visa.u-visa'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1815,15 +1978,18 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::child-waiver.child-waiver': ApiChildWaiverChildWaiver;
       'api::contact.contact': ApiContactContact;
       'api::daily-peace-tip.daily-peace-tip': ApiDailyPeaceTipDailyPeaceTip;
       'api::expert-advice.expert-advice': ApiExpertAdviceExpertAdvice;
+      'api::federal-level-law.federal-level-law': ApiFederalLevelLawFederalLevelLaw;
       'api::healthtip.healthtip': ApiHealthtipHealthtip;
       'api::healthy-relationship-slider.healthy-relationship-slider': ApiHealthyRelationshipSliderHealthyRelationshipSlider;
       'api::healthy-relationship.healthy-relationship': ApiHealthyRelationshipHealthyRelationship;
       'api::healthyrelationshipcontent.healthyrelationshipcontent': ApiHealthyrelationshipcontentHealthyrelationshipcontent;
       'api::home-banner.home-banner': ApiHomeBannerHomeBanner;
       'api::home-slider.home-slider': ApiHomeSliderHomeSlider;
+      'api::immigration-benefit.immigration-benefit': ApiImmigrationBenefitImmigrationBenefit;
       'api::menucontrol.menucontrol': ApiMenucontrolMenucontrol;
       'api::no-peace-home-content.no-peace-home-content': ApiNoPeaceHomeContentNoPeaceHomeContent;
       'api::no-peace-home-house-conflict.no-peace-home-house-conflict': ApiNoPeaceHomeHouseConflictNoPeaceHomeHouseConflict;
@@ -1835,6 +2001,8 @@ declare module '@strapi/strapi' {
       'api::relational.relational': ApiRelationalRelational;
       'api::service-filteroption.service-filteroption': ApiServiceFilteroptionServiceFilteroption;
       'api::support-service.support-service': ApiSupportServiceSupportService;
+      'api::t-visa.t-visa': ApiTVisaTVisa;
+      'api::u-visa.u-visa': ApiUVisaUVisa;
       'api::unhealthurelationshipcontent.unhealthurelationshipcontent': ApiUnhealthurelationshipcontentUnhealthurelationshipcontent;
       'api::unhealthy-relationship.unhealthy-relationship': ApiUnhealthyRelationshipUnhealthyRelationship;
       'api::unhealthyrelationfirstcontent.unhealthyrelationfirstcontent': ApiUnhealthyrelationfirstcontentUnhealthyrelationfirstcontent;

@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "immigration_benefits",
+  "info": {
+    "singularName": "immigration-benefit",
+    "pluralName": "immigration-benefits",
+    "displayName": "ImmigrationBenefit"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.nopeaceat-homemultilineimage"
+    }
+  }
+}

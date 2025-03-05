@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "child_waivers",
+  "info": {
+    "singularName": "child-waiver",
+    "pluralName": "child-waivers",
+    "displayName": "ChildWaiver"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.nopeaceat-homemultilineimage"
+    }
+  }
+}

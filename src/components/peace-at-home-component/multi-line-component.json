@@ -8,7 +8,7 @@
   "attributes": {
     "Description": {
       "type": "text",
-      "maxLength": 50
+      "maxLength": 100
     }
   }
 }

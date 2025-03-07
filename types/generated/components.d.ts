@@ -24,7 +24,7 @@ export interface PeaceAtHomeComponentMultiLineComponent
   attributes: {
     Description: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 50;
+        maxLength: 100;
       }>;
   };
 }

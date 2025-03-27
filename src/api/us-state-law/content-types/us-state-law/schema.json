@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "us_state_laws",
+  "info": {
+    "singularName": "us-state-law",
+    "pluralName": "us-state-laws",
+    "displayName": "USStateLaw"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "statelaws": {
+      "type": "component",
+      "repeatable": true,
+      "component": "peace-at-home-component.us-law-component"
+    }
+  }
+}

@@ -1469,6 +1469,37 @@ export interface ApiUnhealthyrelationthirdcontentUnhealthyrelationthirdcontent
   };
 }
 
+export interface ApiUsStateLawUsStateLaw extends Struct.CollectionTypeSchema {
+  collectionName: 'us_state_laws';
+  info: {
+    displayName: 'USStateLaw';
+    pluralName: 'us-state-laws';
+    singularName: 'us-state-law';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::us-state-law.us-state-law'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    statelaws: Schema.Attribute.Component<
+      'peace-at-home-component.us-law-component',
+      true
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -2009,6 +2040,7 @@ declare module '@strapi/strapi' {
       'api::unhealthyrelationsecondcontent.unhealthyrelationsecondcontent': ApiUnhealthyrelationsecondcontentUnhealthyrelationsecondcontent;
       'api::unhealthyrelationslider.unhealthyrelationslider': ApiUnhealthyrelationsliderUnhealthyrelationslider;
       'api::unhealthyrelationthirdcontent.unhealthyrelationthirdcontent': ApiUnhealthyrelationthirdcontentUnhealthyrelationthirdcontent;
+      'api::us-state-law.us-state-law': ApiUsStateLawUsStateLaw;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_peace_at_home_component_us_law_components",
+  "info": {
+    "displayName": "UsLawComponent"
+  },
+  "options": {},
+  "attributes": {
+    "state": {
+      "type": "string"
+    },
+    "lawdescription": {
+      "type": "blocks"
+    },
+    "link": {
+      "type": "text"
+    }
+  }
+}

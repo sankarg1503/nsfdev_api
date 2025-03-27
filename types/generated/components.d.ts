@@ -116,6 +116,19 @@ export interface PeaceAtHomeComponentTextfield extends Struct.ComponentSchema {
   };
 }
 
+export interface PeaceAtHomeComponentUsLawComponent
+  extends Struct.ComponentSchema {
+  collectionName: 'components_peace_at_home_component_us_law_components';
+  info: {
+    displayName: 'UsLawComponent';
+  };
+  attributes: {
+    lawdescription: Schema.Attribute.Blocks;
+    link: Schema.Attribute.Text;
+    state: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -127,6 +140,7 @@ declare module '@strapi/strapi' {
       'peace-at-home-component.slider': PeaceAtHomeComponentSlider;
       'peace-at-home-component.slider-component': PeaceAtHomeComponentSliderComponent;
       'peace-at-home-component.textfield': PeaceAtHomeComponentTextfield;
+      'peace-at-home-component.us-law-component': PeaceAtHomeComponentUsLawComponent;
     }
   }
 }

@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "partner_violence_titles",
+  "info": {
+    "singularName": "partner-violence-title",
+    "pluralName": "partner-violence-titles",
+    "displayName": "PartnerViolenceTitle",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "webImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "mobileImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ContentBlocks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "peace-at-home-component.multiline-rich-text-box"
+    },
+    "title": {
+      "type": "blocks"
+    },
+    "titleContent": {
+      "type": "blocks"
+    }
+  }
+}

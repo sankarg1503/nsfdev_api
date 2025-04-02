@@ -981,6 +981,45 @@ export interface ApiNoPeaceatHomeNoPeaceatHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPartnerViolenceTitlePartnerViolenceTitle
+  extends Struct.SingleTypeSchema {
+  collectionName: 'partner_violence_titles';
+  info: {
+    description: '';
+    displayName: 'PartnerViolenceTitle';
+    pluralName: 'partner-violence-titles';
+    singularName: 'partner-violence-title';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ContentBlocks: Schema.Attribute.Component<
+      'peace-at-home-component.multiline-rich-text-box',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::partner-violence-title.partner-violence-title'
+    > &
+      Schema.Attribute.Private;
+    mobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.Blocks;
+    titleContent: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface ApiPeaceAtHomeSliderPeaceAtHomeSlider
   extends Struct.CollectionTypeSchema {
   collectionName: 'peace_at_home_sliders';
@@ -2027,6 +2066,7 @@ declare module '@strapi/strapi' {
       'api::no-peaceat-home-slider.no-peaceat-home-slider': ApiNoPeaceatHomeSliderNoPeaceatHomeSlider;
       'api::no-peaceat-home-toxic-relationship.no-peaceat-home-toxic-relationship': ApiNoPeaceatHomeToxicRelationshipNoPeaceatHomeToxicRelationship;
       'api::no-peaceat-home.no-peaceat-home': ApiNoPeaceatHomeNoPeaceatHome;
+      'api::partner-violence-title.partner-violence-title': ApiPartnerViolenceTitlePartnerViolenceTitle;
       'api::peace-at-home-slider.peace-at-home-slider': ApiPeaceAtHomeSliderPeaceAtHomeSlider;
       'api::peaceathome.peaceathome': ApiPeaceathomePeaceathome;
       'api::relational.relational': ApiRelationalRelational;

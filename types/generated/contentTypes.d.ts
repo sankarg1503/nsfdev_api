@@ -1020,6 +1020,40 @@ export interface ApiPartnerViolenceTitlePartnerViolenceTitle
   };
 }
 
+export interface ApiPartnerviolencecontentPartnerviolencecontent
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'partnerviolencecontents';
+  info: {
+    description: '';
+    displayName: 'partnerviolencecontent';
+    pluralName: 'partnerviolencecontents';
+    singularName: 'partnerviolencecontent';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ipvpartnerviolence: Schema.Attribute.Component<
+      'peace-at-home-component.multiline-rich-text-box',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::partnerviolencecontent.partnerviolencecontent'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPeaceAtHomeSliderPeaceAtHomeSlider
   extends Struct.CollectionTypeSchema {
   collectionName: 'peace_at_home_sliders';
@@ -2067,6 +2101,7 @@ declare module '@strapi/strapi' {
       'api::no-peaceat-home-toxic-relationship.no-peaceat-home-toxic-relationship': ApiNoPeaceatHomeToxicRelationshipNoPeaceatHomeToxicRelationship;
       'api::no-peaceat-home.no-peaceat-home': ApiNoPeaceatHomeNoPeaceatHome;
       'api::partner-violence-title.partner-violence-title': ApiPartnerViolenceTitlePartnerViolenceTitle;
+      'api::partnerviolencecontent.partnerviolencecontent': ApiPartnerviolencecontentPartnerviolencecontent;
       'api::peace-at-home-slider.peace-at-home-slider': ApiPeaceAtHomeSliderPeaceAtHomeSlider;
       'api::peaceathome.peaceathome': ApiPeaceathomePeaceathome;
       'api::relational.relational': ApiRelationalRelational;

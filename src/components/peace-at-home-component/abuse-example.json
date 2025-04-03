@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_peace_at_home_component_abuse_examples",
+  "info": {
+    "displayName": "AbuseExample"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    }
+  }
+}

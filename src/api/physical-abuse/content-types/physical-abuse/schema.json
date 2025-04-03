@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "physical_abuses",
+  "info": {
+    "singularName": "physical-abuse",
+    "pluralName": "physical-abuses",
+    "displayName": "PhysicalAbuse",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "physicalAbuse": {
+      "displayName": "AbuseCard",
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.abuse-card"
+    }
+  }
+}

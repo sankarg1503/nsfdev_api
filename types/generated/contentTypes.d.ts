@@ -782,6 +782,35 @@ export interface ApiImmigrationBenefitImmigrationBenefit
   };
 }
 
+export interface ApiIpvtypesofabuseIpvtypesofabuse
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'ipvtypesofabuses';
+  info: {
+    displayName: 'ipvtypesofabuse';
+    pluralName: 'ipvtypesofabuses';
+    singularName: 'ipvtypesofabuse';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ipvtypesofabuse.ipvtypesofabuse'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMenucontrolMenucontrol extends Struct.CollectionTypeSchema {
   collectionName: 'menucontrols';
   info: {
@@ -1123,6 +1152,39 @@ export interface ApiPeaceathomePeaceathome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPhysicalAbusePhysicalAbuse
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'physical_abuses';
+  info: {
+    description: '';
+    displayName: 'PhysicalAbuse';
+    pluralName: 'physical-abuses';
+    singularName: 'physical-abuse';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::physical-abuse.physical-abuse'
+    > &
+      Schema.Attribute.Private;
+    physicalAbuse: Schema.Attribute.Component<
+      'peace-at-home-component.abuse-card',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiRelationalRelational extends Struct.CollectionTypeSchema {
   collectionName: 'relationals';
   info: {
@@ -1343,6 +1405,39 @@ export interface ApiTypesOfAbuseTypesOfAbuse extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTypesofAbuseTitleTypesofAbuseTitle
+  extends Struct.SingleTypeSchema {
+  collectionName: 'typesof_abuse_titles';
+  info: {
+    displayName: 'TypesofAbuseTitle';
+    pluralName: 'typesof-abuse-titles';
+    singularName: 'typesof-abuse-title';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::typesof-abuse-title.typesof-abuse-title'
+    > &
+      Schema.Attribute.Private;
+    mobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -2127,6 +2222,7 @@ declare module '@strapi/strapi' {
       'api::home-banner.home-banner': ApiHomeBannerHomeBanner;
       'api::home-slider.home-slider': ApiHomeSliderHomeSlider;
       'api::immigration-benefit.immigration-benefit': ApiImmigrationBenefitImmigrationBenefit;
+      'api::ipvtypesofabuse.ipvtypesofabuse': ApiIpvtypesofabuseIpvtypesofabuse;
       'api::menucontrol.menucontrol': ApiMenucontrolMenucontrol;
       'api::no-peace-home-content.no-peace-home-content': ApiNoPeaceHomeContentNoPeaceHomeContent;
       'api::no-peace-home-house-conflict.no-peace-home-house-conflict': ApiNoPeaceHomeHouseConflictNoPeaceHomeHouseConflict;
@@ -2137,11 +2233,13 @@ declare module '@strapi/strapi' {
       'api::partnerviolencecontent.partnerviolencecontent': ApiPartnerviolencecontentPartnerviolencecontent;
       'api::peace-at-home-slider.peace-at-home-slider': ApiPeaceAtHomeSliderPeaceAtHomeSlider;
       'api::peaceathome.peaceathome': ApiPeaceathomePeaceathome;
+      'api::physical-abuse.physical-abuse': ApiPhysicalAbusePhysicalAbuse;
       'api::relational.relational': ApiRelationalRelational;
       'api::service-filteroption.service-filteroption': ApiServiceFilteroptionServiceFilteroption;
       'api::support-service.support-service': ApiSupportServiceSupportService;
       'api::t-visa.t-visa': ApiTVisaTVisa;
       'api::types-of-abuse.types-of-abuse': ApiTypesOfAbuseTypesOfAbuse;
+      'api::typesof-abuse-title.typesof-abuse-title': ApiTypesofAbuseTitleTypesofAbuseTitle;
       'api::u-visa.u-visa': ApiUVisaUVisa;
       'api::unhealthurelationshipcontent.unhealthurelationshipcontent': ApiUnhealthurelationshipcontentUnhealthurelationshipcontent;
       'api::unhealthy-relationship.unhealthy-relationship': ApiUnhealthyRelationshipUnhealthyRelationship;

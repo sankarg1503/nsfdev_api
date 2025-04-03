@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "typesof_abuse_titles",
+  "info": {
+    "singularName": "typesof-abuse-title",
+    "pluralName": "typesof-abuse-titles",
+    "displayName": "TypesofAbuseTitle"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "blocks"
+    },
+    "webImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "mobileImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

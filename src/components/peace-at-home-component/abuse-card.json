@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_peace_at_home_component_abuse_cards",
+  "info": {
+    "displayName": "AbuseCard"
+  },
+  "options": {},
+  "attributes": {
+    "titleContent": {
+      "type": "blocks"
+    },
+    "webImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "mobileImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "example": {
+      "displayName": "AbuseExample",
+      "type": "component",
+      "repeatable": true,
+      "component": "peace-at-home-component.abuse-example"
+    }
+  }
+}

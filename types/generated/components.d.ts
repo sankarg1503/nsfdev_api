@@ -1,5 +1,34 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface PeaceAtHomeComponentAbuseCard extends Struct.ComponentSchema {
+  collectionName: 'components_peace_at_home_component_abuse_cards';
+  info: {
+    displayName: 'AbuseCard';
+  };
+  attributes: {
+    example: Schema.Attribute.Component<
+      'peace-at-home-component.abuse-example',
+      true
+    >;
+    mobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    titleContent: Schema.Attribute.Blocks;
+    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface PeaceAtHomeComponentAbuseExample
+  extends Struct.ComponentSchema {
+  collectionName: 'components_peace_at_home_component_abuse_examples';
+  info: {
+    displayName: 'AbuseExample';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+  };
+}
+
 export interface PeaceAtHomeComponentAbuseImage extends Struct.ComponentSchema {
   collectionName: 'components_peace_at_home_component_abuse_images';
   info: {
@@ -147,6 +176,8 @@ export interface PeaceAtHomeComponentUsLawComponent
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'peace-at-home-component.abuse-card': PeaceAtHomeComponentAbuseCard;
+      'peace-at-home-component.abuse-example': PeaceAtHomeComponentAbuseExample;
       'peace-at-home-component.abuse-image': PeaceAtHomeComponentAbuseImage;
       'peace-at-home-component.filter-constant': PeaceAtHomeComponentFilterConstant;
       'peace-at-home-component.multi-line-component': PeaceAtHomeComponentMultiLineComponent;

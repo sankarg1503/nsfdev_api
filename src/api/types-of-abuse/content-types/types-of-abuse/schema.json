@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "types_of_abuses",
+  "info": {
+    "singularName": "types-of-abuse",
+    "pluralName": "types-of-abuses",
+    "displayName": "TypesOfAbuse",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "AbuseGallery": {
+      "displayName": "AbuseImage",
+      "type": "component",
+      "repeatable": true,
+      "component": "peace-at-home-component.abuse-image"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

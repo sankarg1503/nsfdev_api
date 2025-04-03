@@ -1313,6 +1313,39 @@ export interface ApiTVisaTVisa extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiTypesOfAbuseTypesOfAbuse extends Struct.SingleTypeSchema {
+  collectionName: 'types_of_abuses';
+  info: {
+    description: '';
+    displayName: 'TypesOfAbuse';
+    pluralName: 'types-of-abuses';
+    singularName: 'types-of-abuse';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    AbuseGallery: Schema.Attribute.Component<
+      'peace-at-home-component.abuse-image',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::types-of-abuse.types-of-abuse'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiUVisaUVisa extends Struct.CollectionTypeSchema {
   collectionName: 'u_visas';
   info: {
@@ -2108,6 +2141,7 @@ declare module '@strapi/strapi' {
       'api::service-filteroption.service-filteroption': ApiServiceFilteroptionServiceFilteroption;
       'api::support-service.support-service': ApiSupportServiceSupportService;
       'api::t-visa.t-visa': ApiTVisaTVisa;
+      'api::types-of-abuse.types-of-abuse': ApiTypesOfAbuseTypesOfAbuse;
       'api::u-visa.u-visa': ApiUVisaUVisa;
       'api::unhealthurelationshipcontent.unhealthurelationshipcontent': ApiUnhealthurelationshipcontentUnhealthurelationshipcontent;
       'api::unhealthy-relationship.unhealthy-relationship': ApiUnhealthyRelationshipUnhealthyRelationship;

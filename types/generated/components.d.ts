@@ -1,5 +1,20 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface PeaceAtHomeComponentAbuseImage extends Struct.ComponentSchema {
+  collectionName: 'components_peace_at_home_component_abuse_images';
+  info: {
+    displayName: 'AbuseImage';
+  };
+  attributes: {
+    caption: Schema.Attribute.String;
+    mobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface PeaceAtHomeComponentFilterConstant
   extends Struct.ComponentSchema {
   collectionName: 'components_peace_at_home_component_filter_constants';
@@ -132,6 +147,7 @@ export interface PeaceAtHomeComponentUsLawComponent
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'peace-at-home-component.abuse-image': PeaceAtHomeComponentAbuseImage;
       'peace-at-home-component.filter-constant': PeaceAtHomeComponentFilterConstant;
       'peace-at-home-component.multi-line-component': PeaceAtHomeComponentMultiLineComponent;
       'peace-at-home-component.multiline-rich-text-box': PeaceAtHomeComponentMultilineRichTextBox;

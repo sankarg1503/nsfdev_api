@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_peace_at_home_component_abuse_images",
+  "info": {
+    "displayName": "AbuseImage"
+  },
+  "options": {},
+  "attributes": {
+    "webImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "mobileImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "caption": {
+      "type": "string"
+    }
+  }
+}

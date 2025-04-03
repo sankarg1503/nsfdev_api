@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "immigrant_abuses",
+  "info": {
+    "singularName": "immigrant-abuse",
+    "pluralName": "immigrant-abuses",
+    "displayName": "ImmigrantAbuse"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "immigrantAbuse": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.abuse-card"
+    }
+  }
+}

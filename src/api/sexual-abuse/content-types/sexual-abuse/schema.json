@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sexual_abuses",
+  "info": {
+    "singularName": "sexual-abuse",
+    "pluralName": "sexual-abuses",
+    "displayName": "SexualAbuse"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sexualAbuse": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.abuse-card"
+    }
+  }
+}

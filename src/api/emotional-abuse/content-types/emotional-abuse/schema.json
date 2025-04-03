@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "emotional_abuses",
+  "info": {
+    "singularName": "emotional-abuse",
+    "pluralName": "emotional-abuses",
+    "displayName": "EmotionalAbuse"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "emotionalAbuse": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.abuse-card"
+    }
+  }
+}

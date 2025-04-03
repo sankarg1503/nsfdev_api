@@ -467,6 +467,38 @@ export interface ApiDailyPeaceTipDailyPeaceTip
   };
 }
 
+export interface ApiEmotionalAbuseEmotionalAbuse
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'emotional_abuses';
+  info: {
+    displayName: 'EmotionalAbuse';
+    pluralName: 'emotional-abuses';
+    singularName: 'emotional-abuse';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    emotionalAbuse: Schema.Attribute.Component<
+      'peace-at-home-component.abuse-card',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::emotional-abuse.emotional-abuse'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiExpertAdviceExpertAdvice
   extends Struct.CollectionTypeSchema {
   collectionName: 'expert_advices';
@@ -537,6 +569,38 @@ export interface ApiFederalLevelLawFederalLevelLaw
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ApiFinancialAbuseFinancialAbuse
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'financial_abuses';
+  info: {
+    displayName: 'FinancialAbuse';
+    pluralName: 'financial-abuses';
+    singularName: 'financial-abuse';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    financialAbuse: Schema.Attribute.Component<
+      'peace-at-home-component.abuse-card',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::financial-abuse.financial-abuse'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -741,6 +805,38 @@ export interface ApiHomeSliderHomeSlider extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::home-slider.home-slider'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiImmigrantAbuseImmigrantAbuse
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'immigrant_abuses';
+  info: {
+    displayName: 'ImmigrantAbuse';
+    pluralName: 'immigrant-abuses';
+    singularName: 'immigrant-abuse';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    immigrantAbuse: Schema.Attribute.Component<
+      'peace-at-home-component.abuse-card',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::immigrant-abuse.immigrant-abuse'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -1253,6 +1349,37 @@ export interface ApiServiceFilteroptionServiceFilteroption
   };
 }
 
+export interface ApiSexualAbuseSexualAbuse extends Struct.CollectionTypeSchema {
+  collectionName: 'sexual_abuses';
+  info: {
+    displayName: 'SexualAbuse';
+    pluralName: 'sexual-abuses';
+    singularName: 'sexual-abuse';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sexual-abuse.sexual-abuse'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sexualAbuse: Schema.Attribute.Component<
+      'peace-at-home-component.abuse-card',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSupportServiceSupportService
   extends Struct.CollectionTypeSchema {
   collectionName: 'support_services';
@@ -1369,6 +1496,38 @@ export interface ApiTVisaTVisa extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTechnologicalAbuseTechnologicalAbuse
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'technological_abuses';
+  info: {
+    displayName: 'TechnologicalAbuse';
+    pluralName: 'technological-abuses';
+    singularName: 'technological-abuse';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::technological-abuse.technological-abuse'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    technologicalAbuse: Schema.Attribute.Component<
+      'peace-at-home-component.abuse-card',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1698,6 +1857,37 @@ export interface ApiUsStateLawUsStateLaw extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiVerbalAbuseVerbalAbuse extends Struct.CollectionTypeSchema {
+  collectionName: 'verbal_abuses';
+  info: {
+    displayName: 'VerbalAbuse';
+    pluralName: 'verbal-abuses';
+    singularName: 'verbal-abuse';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::verbal-abuse.verbal-abuse'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    verbalAbuse: Schema.Attribute.Component<
+      'peace-at-home-component.abuse-card',
+      false
+    >;
   };
 }
 
@@ -2213,14 +2403,17 @@ declare module '@strapi/strapi' {
       'api::child-waiver.child-waiver': ApiChildWaiverChildWaiver;
       'api::contact.contact': ApiContactContact;
       'api::daily-peace-tip.daily-peace-tip': ApiDailyPeaceTipDailyPeaceTip;
+      'api::emotional-abuse.emotional-abuse': ApiEmotionalAbuseEmotionalAbuse;
       'api::expert-advice.expert-advice': ApiExpertAdviceExpertAdvice;
       'api::federal-level-law.federal-level-law': ApiFederalLevelLawFederalLevelLaw;
+      'api::financial-abuse.financial-abuse': ApiFinancialAbuseFinancialAbuse;
       'api::healthtip.healthtip': ApiHealthtipHealthtip;
       'api::healthy-relationship-slider.healthy-relationship-slider': ApiHealthyRelationshipSliderHealthyRelationshipSlider;
       'api::healthy-relationship.healthy-relationship': ApiHealthyRelationshipHealthyRelationship;
       'api::healthyrelationshipcontent.healthyrelationshipcontent': ApiHealthyrelationshipcontentHealthyrelationshipcontent;
       'api::home-banner.home-banner': ApiHomeBannerHomeBanner;
       'api::home-slider.home-slider': ApiHomeSliderHomeSlider;
+      'api::immigrant-abuse.immigrant-abuse': ApiImmigrantAbuseImmigrantAbuse;
       'api::immigration-benefit.immigration-benefit': ApiImmigrationBenefitImmigrationBenefit;
       'api::ipvtypesofabuse.ipvtypesofabuse': ApiIpvtypesofabuseIpvtypesofabuse;
       'api::menucontrol.menucontrol': ApiMenucontrolMenucontrol;
@@ -2236,8 +2429,10 @@ declare module '@strapi/strapi' {
       'api::physical-abuse.physical-abuse': ApiPhysicalAbusePhysicalAbuse;
       'api::relational.relational': ApiRelationalRelational;
       'api::service-filteroption.service-filteroption': ApiServiceFilteroptionServiceFilteroption;
+      'api::sexual-abuse.sexual-abuse': ApiSexualAbuseSexualAbuse;
       'api::support-service.support-service': ApiSupportServiceSupportService;
       'api::t-visa.t-visa': ApiTVisaTVisa;
+      'api::technological-abuse.technological-abuse': ApiTechnologicalAbuseTechnologicalAbuse;
       'api::types-of-abuse.types-of-abuse': ApiTypesOfAbuseTypesOfAbuse;
       'api::typesof-abuse-title.typesof-abuse-title': ApiTypesofAbuseTitleTypesofAbuseTitle;
       'api::u-visa.u-visa': ApiUVisaUVisa;
@@ -2248,6 +2443,7 @@ declare module '@strapi/strapi' {
       'api::unhealthyrelationslider.unhealthyrelationslider': ApiUnhealthyrelationsliderUnhealthyrelationslider;
       'api::unhealthyrelationthirdcontent.unhealthyrelationthirdcontent': ApiUnhealthyrelationthirdcontentUnhealthyrelationthirdcontent;
       'api::us-state-law.us-state-law': ApiUsStateLawUsStateLaw;
+      'api::verbal-abuse.verbal-abuse': ApiVerbalAbuseVerbalAbuse;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "technological_abuses",
+  "info": {
+    "singularName": "technological-abuse",
+    "pluralName": "technological-abuses",
+    "displayName": "TechnologicalAbuse"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "technologicalAbuse": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.abuse-card"
+    }
+  }
+}

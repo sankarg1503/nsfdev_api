@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "verbal_abuses",
+  "info": {
+    "singularName": "verbal-abuse",
+    "pluralName": "verbal-abuses",
+    "displayName": "VerbalAbuse"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "verbalAbuse": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.abuse-card"
+    }
+  }
+}

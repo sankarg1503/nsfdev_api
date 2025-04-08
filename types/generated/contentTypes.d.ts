@@ -907,6 +907,42 @@ export interface ApiIpvtypesofabuseIpvtypesofabuse
   };
 }
 
+export interface ApiLegalRightLegalRight extends Struct.SingleTypeSchema {
+  collectionName: 'legal_rights';
+  info: {
+    displayName: 'LegalRight';
+    pluralName: 'legal-rights';
+    singularName: 'legal-right';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contentBlocks: Schema.Attribute.Component<
+      'peace-at-home-component.multiline-rich-text-box',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::legal-right.legal-right'
+    > &
+      Schema.Attribute.Private;
+    mobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    webImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface ApiMenucontrolMenucontrol extends Struct.CollectionTypeSchema {
   collectionName: 'menucontrols';
   info: {
@@ -2416,6 +2452,7 @@ declare module '@strapi/strapi' {
       'api::immigrant-abuse.immigrant-abuse': ApiImmigrantAbuseImmigrantAbuse;
       'api::immigration-benefit.immigration-benefit': ApiImmigrationBenefitImmigrationBenefit;
       'api::ipvtypesofabuse.ipvtypesofabuse': ApiIpvtypesofabuseIpvtypesofabuse;
+      'api::legal-right.legal-right': ApiLegalRightLegalRight;
       'api::menucontrol.menucontrol': ApiMenucontrolMenucontrol;
       'api::no-peace-home-content.no-peace-home-content': ApiNoPeaceHomeContentNoPeaceHomeContent;
       'api::no-peace-home-house-conflict.no-peace-home-house-conflict': ApiNoPeaceHomeHouseConflictNoPeaceHomeHouseConflict;

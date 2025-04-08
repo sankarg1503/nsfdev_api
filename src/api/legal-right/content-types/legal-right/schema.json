@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "legal_rights",
+  "info": {
+    "singularName": "legal-right",
+    "pluralName": "legal-rights",
+    "displayName": "LegalRight"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "blocks"
+    },
+    "mobileImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "webImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "contentBlocks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.multiline-rich-text-box"
+    }
+  }
+}

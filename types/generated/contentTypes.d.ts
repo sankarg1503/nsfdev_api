@@ -910,6 +910,7 @@ export interface ApiIpvtypesofabuseIpvtypesofabuse
 export interface ApiLegalRightLegalRight extends Struct.SingleTypeSchema {
   collectionName: 'legal_rights';
   info: {
+    description: '';
     displayName: 'LegalRight';
     pluralName: 'legal-rights';
     singularName: 'legal-right';
@@ -919,8 +920,8 @@ export interface ApiLegalRightLegalRight extends Struct.SingleTypeSchema {
   };
   attributes: {
     contentBlocks: Schema.Attribute.Component<
-      'peace-at-home-component.multiline-rich-text-box',
-      false
+      'peace-at-home-component.nopeaceat-homemultilineimage',
+      true
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

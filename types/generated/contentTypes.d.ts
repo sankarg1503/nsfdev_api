@@ -1735,6 +1735,38 @@ export interface ApiUnhealthyRelationshipUnhealthyRelationship
   };
 }
 
+export interface ApiUnhealthyrelationexampleUnhealthyrelationexample
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'unhealthyrelationexamples';
+  info: {
+    displayName: 'Unhealthyrelationexample';
+    pluralName: 'unhealthyrelationexamples';
+    singularName: 'unhealthyrelationexample';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Component<
+      'peace-at-home-component.abuse-example',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::unhealthyrelationexample.unhealthyrelationexample'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiUnhealthyrelationfirstcontentUnhealthyrelationfirstcontent
   extends Struct.CollectionTypeSchema {
   collectionName: 'unhealthyrelationfirstcontents';
@@ -2476,6 +2508,7 @@ declare module '@strapi/strapi' {
       'api::u-visa.u-visa': ApiUVisaUVisa;
       'api::unhealthurelationshipcontent.unhealthurelationshipcontent': ApiUnhealthurelationshipcontentUnhealthurelationshipcontent;
       'api::unhealthy-relationship.unhealthy-relationship': ApiUnhealthyRelationshipUnhealthyRelationship;
+      'api::unhealthyrelationexample.unhealthyrelationexample': ApiUnhealthyrelationexampleUnhealthyrelationexample;
       'api::unhealthyrelationfirstcontent.unhealthyrelationfirstcontent': ApiUnhealthyrelationfirstcontentUnhealthyrelationfirstcontent;
       'api::unhealthyrelationsecondcontent.unhealthyrelationsecondcontent': ApiUnhealthyrelationsecondcontentUnhealthyrelationsecondcontent;
       'api::unhealthyrelationslider.unhealthyrelationslider': ApiUnhealthyrelationsliderUnhealthyrelationslider;

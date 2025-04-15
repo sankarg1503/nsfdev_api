@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "unhealthyrelationexamples",
+  "info": {
+    "singularName": "unhealthyrelationexample",
+    "pluralName": "unhealthyrelationexamples",
+    "displayName": "Unhealthyrelationexample"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "peace-at-home-component.abuse-example"
+    }
+  }
+}

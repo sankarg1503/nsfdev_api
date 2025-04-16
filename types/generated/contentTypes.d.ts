@@ -1508,6 +1508,37 @@ export interface ApiSupportServiceSupportService
   };
 }
 
+export interface ApiSystemAbuseSystemAbuse extends Struct.CollectionTypeSchema {
+  collectionName: 'system_abuses';
+  info: {
+    displayName: 'SystemAbuse';
+    pluralName: 'system-abuses';
+    singularName: 'system-abuse';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::system-abuse.system-abuse'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    systemAbuse: Schema.Attribute.Component<
+      'peace-at-home-component.abuse-card',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTVisaTVisa extends Struct.CollectionTypeSchema {
   collectionName: 't_visas';
   info: {
@@ -2504,6 +2535,7 @@ declare module '@strapi/strapi' {
       'api::service-filteroption.service-filteroption': ApiServiceFilteroptionServiceFilteroption;
       'api::sexual-abuse.sexual-abuse': ApiSexualAbuseSexualAbuse;
       'api::support-service.support-service': ApiSupportServiceSupportService;
+      'api::system-abuse.system-abuse': ApiSystemAbuseSystemAbuse;
       'api::t-visa.t-visa': ApiTVisaTVisa;
       'api::technological-abuse.technological-abuse': ApiTechnologicalAbuseTechnologicalAbuse;
       'api::types-of-abuse.types-of-abuse': ApiTypesOfAbuseTypesOfAbuse;

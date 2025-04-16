@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "system_abuses",
+  "info": {
+    "singularName": "system-abuse",
+    "pluralName": "system-abuses",
+    "displayName": "SystemAbuse"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "systemAbuse": {
+      "type": "component",
+      "repeatable": false,
+      "component": "peace-at-home-component.abuse-card"
+    }
+  }
+}

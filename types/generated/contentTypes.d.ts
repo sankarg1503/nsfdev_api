@@ -431,6 +431,43 @@ export interface ApiContactContact extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCriminizalationofSurvivorCriminizalationofSurvivor
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'criminizalationof_survivors';
+  info: {
+    displayName: 'CriminizalationofSurvivors';
+    pluralName: 'criminizalationof-survivors';
+    singularName: 'criminizalationof-survivor';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contentBlock: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::criminizalationof-survivor.criminizalationof-survivor'
+    > &
+      Schema.Attribute.Private;
+    mobileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    webImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+  };
+}
+
 export interface ApiDailyPeaceTipDailyPeaceTip
   extends Struct.CollectionTypeSchema {
   collectionName: 'daily_peace_tips';
@@ -2505,6 +2542,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::child-waiver.child-waiver': ApiChildWaiverChildWaiver;
       'api::contact.contact': ApiContactContact;
+      'api::criminizalationof-survivor.criminizalationof-survivor': ApiCriminizalationofSurvivorCriminizalationofSurvivor;
       'api::daily-peace-tip.daily-peace-tip': ApiDailyPeaceTipDailyPeaceTip;
       'api::emotional-abuse.emotional-abuse': ApiEmotionalAbuseEmotionalAbuse;
       'api::expert-advice.expert-advice': ApiExpertAdviceExpertAdvice;

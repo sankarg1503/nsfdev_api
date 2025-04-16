@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "criminizalationof_survivors",
+  "info": {
+    "singularName": "criminizalationof-survivor",
+    "pluralName": "criminizalationof-survivors",
+    "displayName": "CriminizalationofSurvivors"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contentBlock": {
+      "type": "blocks"
+    },
+    "webImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "mobileImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

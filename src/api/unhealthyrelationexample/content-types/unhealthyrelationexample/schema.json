@@ -4,7 +4,8 @@
   "info": {
     "singularName": "unhealthyrelationexample",
     "pluralName": "unhealthyrelationexamples",
-    "displayName": "Unhealthyrelationexample"
+    "displayName": "Unhealthyrelationexample",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,12 @@
       "type": "component",
       "repeatable": true,
       "component": "peace-at-home-component.abuse-example"
+    },
+    "Title": {
+      "type": "text"
+    },
+    "Description": {
+      "type": "text"
     }
   }
 }

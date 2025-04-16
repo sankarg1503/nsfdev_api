@@ -1739,6 +1739,7 @@ export interface ApiUnhealthyrelationexampleUnhealthyrelationexample
   extends Struct.CollectionTypeSchema {
   collectionName: 'unhealthyrelationexamples';
   info: {
+    description: '';
     displayName: 'Unhealthyrelationexample';
     pluralName: 'unhealthyrelationexamples';
     singularName: 'unhealthyrelationexample';
@@ -1754,6 +1755,7 @@ export interface ApiUnhealthyrelationexampleUnhealthyrelationexample
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1761,6 +1763,7 @@ export interface ApiUnhealthyrelationexampleUnhealthyrelationexample
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

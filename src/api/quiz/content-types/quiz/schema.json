@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quizzes",
+  "info": {
+    "singularName": "quiz",
+    "pluralName": "quizzes",
+    "displayName": "quiz",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "subheading": {
+      "type": "text"
+    },
+    "questions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "peace-at-home-component.abuse-example"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

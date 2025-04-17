@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_peace_at_home_component_sripacomponents",
+  "info": {
+    "displayName": "sripacomponent"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "text"
+    },
+    "responseyes": {
+      "type": "blocks"
+    }
+  }
+}

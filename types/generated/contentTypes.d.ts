@@ -1355,6 +1355,37 @@ export interface ApiPhysicalAbusePhysicalAbuse
   };
 }
 
+export interface ApiQuizQuiz extends Struct.CollectionTypeSchema {
+  collectionName: 'quizzes';
+  info: {
+    description: '';
+    displayName: 'quiz';
+    pluralName: 'quizzes';
+    singularName: 'quiz';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::quiz.quiz'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    questions: Schema.Attribute.Component<
+      'peace-at-home-component.abuse-example',
+      true
+    >;
+    subheading: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiRelationalRelational extends Struct.CollectionTypeSchema {
   collectionName: 'relationals';
   info: {
@@ -1451,6 +1482,42 @@ export interface ApiSexualAbuseSexualAbuse extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSripaaSripaa extends Struct.CollectionTypeSchema {
+  collectionName: 'sripaas';
+  info: {
+    description: '';
+    displayName: 'sripaa';
+    pluralName: 'sripaas';
+    singularName: 'sripaa';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sripaa.sripaa'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    rating: Schema.Attribute.Text;
+    sripa: Schema.Attribute.Component<
+      'peace-at-home-component.sripacomponent',
+      true
+    >;
+    subheading: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    yesanswer: Schema.Attribute.Blocks;
   };
 }
 
@@ -2569,9 +2636,11 @@ declare module '@strapi/strapi' {
       'api::peace-at-home-slider.peace-at-home-slider': ApiPeaceAtHomeSliderPeaceAtHomeSlider;
       'api::peaceathome.peaceathome': ApiPeaceathomePeaceathome;
       'api::physical-abuse.physical-abuse': ApiPhysicalAbusePhysicalAbuse;
+      'api::quiz.quiz': ApiQuizQuiz;
       'api::relational.relational': ApiRelationalRelational;
       'api::service-filteroption.service-filteroption': ApiServiceFilteroptionServiceFilteroption;
       'api::sexual-abuse.sexual-abuse': ApiSexualAbuseSexualAbuse;
+      'api::sripaa.sripaa': ApiSripaaSripaa;
       'api::support-service.support-service': ApiSupportServiceSupportService;
       'api::system-abuse.system-abuse': ApiSystemAbuseSystemAbuse;
       'api::t-visa.t-visa': ApiTVisaTVisa;

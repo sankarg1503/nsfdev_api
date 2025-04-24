@@ -150,6 +150,18 @@ export interface PeaceAtHomeComponentSliderComponent
   };
 }
 
+export interface PeaceAtHomeComponentSripacomponent
+  extends Struct.ComponentSchema {
+  collectionName: 'components_peace_at_home_component_sripacomponents';
+  info: {
+    displayName: 'sripacomponent';
+  };
+  attributes: {
+    question: Schema.Attribute.Text;
+    responseyes: Schema.Attribute.Blocks;
+  };
+}
+
 export interface PeaceAtHomeComponentTextfield extends Struct.ComponentSchema {
   collectionName: 'components_peace_at_home_component_textfields';
   info: {
@@ -186,6 +198,7 @@ declare module '@strapi/strapi' {
       'peace-at-home-component.nopeaceat-homemultilineimage': PeaceAtHomeComponentNopeaceatHomemultilineimage;
       'peace-at-home-component.slider': PeaceAtHomeComponentSlider;
       'peace-at-home-component.slider-component': PeaceAtHomeComponentSliderComponent;
+      'peace-at-home-component.sripacomponent': PeaceAtHomeComponentSripacomponent;
       'peace-at-home-component.textfield': PeaceAtHomeComponentTextfield;
       'peace-at-home-component.us-law-component': PeaceAtHomeComponentUsLawComponent;
     }

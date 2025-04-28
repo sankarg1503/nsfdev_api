@@ -1,9 +1,16 @@
-export default [
-  'strapi::logger',
+
+module.exports = [
   'strapi::errors',
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: ['https://nsfdvsa.z13.web.core.windows.net'], // allow your site
+      methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    },
+  },
   'strapi::security',
-  'strapi::cors',
   'strapi::poweredBy',
+  'strapi::logger',
   'strapi::query',
   'strapi::body',
   'strapi::session',

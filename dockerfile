@@ -10,6 +10,8 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+RUN mkdir -p ./public/uploads
+
 # Copy the rest of the application code
 COPY . .
 
